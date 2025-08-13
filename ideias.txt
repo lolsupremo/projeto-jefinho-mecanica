@@ -1,0 +1,4 @@
+nome que libera tudo: Rodrigo Chave Inglesa
+carros comuns: Volkswagen Gol, Chevrolet Onix, Fiat Palio, Ford Ka, Renault Sandero, Hyundai HB20, Volkswagen Fox, Fiat Uno, Chevrolet Celta, Volkswagen Voyage, Fiat Siena, Ford Fiesta, Honda Fit, Fiat Mob
+carros raros: Chevrolet Camaro, Ford Mustang, Porsche 911, Nissan GT-R, Mclaren Senna
+carro boss: Marea, peugeot 206
