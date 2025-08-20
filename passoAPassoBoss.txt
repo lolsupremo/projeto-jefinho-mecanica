@@ -1,0 +1,51 @@
+10 Passos para consertar um motor fundido com bielas batidas:
+
+Remover o motor do carro
+
+Desconectar bateria, chicote elétrico, mangueiras e suportes.
+
+Usar guincho para retirar o motor.
+
+Desmontar periféricos do motor
+
+Tirar alternador, compressor do ar-condicionado, bomba d’água, correia dentada/corrente.
+
+Retirar o cabeçote
+
+Tirar tampa de válvulas, comandos, coletor de admissão e escape.
+
+Soltar os parafusos do cabeçote e remover.
+
+Remover o cárter
+
+Virar o motor de cabeça pra baixo e tirar todos os parafusos do cárter (parte de baixo).
+
+Soltar bomba de óleo
+
+Tirar a bomba de óleo e verificar por danos ou entupimentos.
+
+Desmontar o vira-brequim
+
+Tirar capas de mancais e bielas.
+
+Verificar folgas, trincas e marcas no eixo.
+
+Remover pistões e bielas
+
+Tirar pistões com bielas pelos cilindros.
+
+Separar e identificar cada conjunto.
+
+Avaliar os danos
+
+Verificar se precisa retificar o bloco, trocar bielas, pistões ou o vira-brequim.
+
+Substituir peças danificadas
+
+Instalar bielas novas, bronzinas, pistões (se necessário).
+
+Verificar folgas com plastigauge (se for realista o jogo).
+
+Montar tudo de volta na ordem inversa
+
+Vira-brequim → pistões → bomba de óleo → cárter → cabeçote → periféricos → motor no carro.
