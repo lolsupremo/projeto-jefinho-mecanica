@@ -1,10 +1,15 @@
 programa
 {
+	inclua biblioteca Util --> u
+	inclua biblioteca Matematica --> m
 	cadeia carros_comuns[14] = {"Volkswagen Gol", "Chevrolet Onix", "Fiat Palio", "Ford Ka", "Renault Sandero", "Hyundai HB20", "Volkswagen Fox", "Fiat Uno", "Chevrolet Celta", "Volkswagen Voyage", "Fiat Siena", "Ford Fiesta", "Honda Fit", "Fiat Mob"}
 	cadeia carros_raros[5] = {"Honda Civic", "Toyota Hilux", "Fiat Titano", "Toyota Corolla", "Ford Ranger"}
 	cadeia carros_ultra_raros[5] = {"Chevrolet Camaro", "Ford Mustang", "Porsche 911", "Nissan GT-R", "Mclaren Senna"}
 	cadeia nomes_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico
+	inteiro dinheiro = 1000
+	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
+	
 	funcao inicio()
 	{
 		
@@ -38,14 +43,3 @@ programa
 
 	}
 }
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 2979; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
