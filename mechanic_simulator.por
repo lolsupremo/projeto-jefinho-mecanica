@@ -5,7 +5,8 @@ programa
 	inclua biblioteca Matematica --> m
 	cadeia carros_comuns[14] = {"Volkswagen Gol", "Chevrolet Onix", "Fiat Palio", "Ford Ka", "Renault Sandero", "Hyundai HB20", "Volkswagen Fox", "Fiat Uno", "Chevrolet Celta", "Volkswagen Voyage", "Fiat Siena", "Ford Fiesta", "Honda Fit", "Fiat Mob"}
 	cadeia carros_raros[5] = {"Honda Civic", "Toyota Hilux", "Fiat Titano", "Toyota Corolla", "Ford Ranger"}
-	cadeia carros_ultra_raros[5] = {"Chevrolet Camaro", "Ford Mustang", "Porsche 911", "Nissan GT-R", "Mclaren Senna"}
+	cadeia carros_ultra_raros[3] = {"Chevrolet Camaro", "Ford Mustang", "Porsche 911"}
+	cadeia carros_boss[2] = {"Marea", "Peugeot 206"}
 	cadeia nomes_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina
 	inteiro dinheiro = 1000
