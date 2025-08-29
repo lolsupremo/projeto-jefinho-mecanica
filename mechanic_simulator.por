@@ -8,8 +8,8 @@ programa
 	cadeia carros_ultra_raros[3] = {"Chevrolet Camaro", "Ford Mustang", "Porsche 911"}
 	cadeia carros_boss[2] = {"Marea", "Peugeot 206"}
 	cadeia nomes_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
-	cadeia nome_mecanico, nome_oficina
-	inteiro dinheiro = 1000
+	cadeia nome_mecanico, nome_oficina, continuar
+	inteiro dinheiro = 1000, escolhas, dia
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	
 	funcao inicio()
@@ -32,14 +32,23 @@ programa
 		escreva("| |   | |    | | | || |/ _ \\/ _` | / _` || '_|    | |   / /    | | \\__ \\/ _` | | || '_| \n")
 		escreva("| |   |_|    | |  \\__/ \\___/\\__, | \\__,_||_|      | |  /___|   | | |___/\\__,_| |_||_|   \n")
 		escreva("|__|        |__|            |___/                 |__|        |__|                      \n")
-		
-		inteiro escolhas, dia
-		cadeia continuar
 		leia(escolhas)
 
 		escolha(escolhas){
 			caso 1: 
+			
+			introducao()
+			
 			limpa()
+
+			tutorial_boss()
+
+			
+			
+		}
+	}
+	funcao introducao(){
+		limpa()
 			
 			escreva("informe o nome do mecânico\n")
 			leia(nome_mecanico)
@@ -72,9 +81,8 @@ programa
 				escreva("\ntecla presionada errada aperte [enter] ")
 				leia(continuar) 
 			}
-			limpa()
-			
-			//passo a passo do boss
+	}
+	funcao tutorial_boss(){
 			escreva("Como resolver o problema de bater bielas de um carro.\n\n")
 			escreva("1)Remover o motor do carro\n\n")
 			escreva("Desconectar bateria, chicote elétrico, mangueiras e suportes.\n\n")
@@ -101,8 +109,23 @@ programa
 				leia(continuar) 
 			}
 			limpa()
-			
-			
+	}
+	funcao sorteio_carro(){
+		inteiro sorteio = u.sorteia(1, 100)
+		se(sorteio <= 80){
+			sorteio = u.sorteia(1, 14)
+			escolha(sorteio){
+					 
+			}
+		}senao{
+			se(sorteio <= 99){
+				sorteio = u.sorteia(1, 5)
+				escolha(sorteio){
+
+				}
+			}senao{
+				sorteio = u.sorteia(1, 3)
+			}
 		}
 	}
 }
