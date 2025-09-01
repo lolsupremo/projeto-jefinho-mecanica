@@ -1,8 +1,8 @@
 funcao gol(){
 cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
-escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)])
-escreva(nome_mecanico, ": Qual seria o seu carro?")
-escreva(Nome_cliente, ": Um Gol ", cores[u.sorteia(0, 9)])
+escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
+escreva(nome_mecanico, ": Qual seria o seu carro?", "\n")
+escreva(Nome_cliente, ": Um Gol ", cores[u.sorteia(0, 9)], "\n")
 
 escreva("......                                                                ..........\n")
 escreva("....                          .*##(/////////////#((%%%%%%&%%&#/,        ........\n")
