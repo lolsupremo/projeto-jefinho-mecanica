@@ -7,18 +7,19 @@ programa
 	cadeia carros_raros[5] = {"Honda Civic", "Toyota Hilux", "Fiat Titano", "Toyota Corolla", "Ford Ranger"}
 	cadeia carros_ultra_raros[3] = {"Chevrolet Camaro", "Ford Mustang", "Porsche 911"}
 	cadeia carros_boss[2] = {"Marea", "Peugeot 206"}
-	cadeia nomes_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
+	cadeia nome_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina, continuar
 	inteiro dinheiro = 1000, escolhas, dia
+	cadeia cores [10] = {"preto", "branco", "cinza", "cinza escuro", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
-	
+	cadeia frases_cliente[20] = {"Bom dia, meu carro está fazendo um barulho estranho. Pode dar uma olhada?", "Preciso de um serviço rápido, mas que resolva de vez. Confio no seu trabalho.", "Meu veículo está com dificuldade de ligar. É algo sério?", "Trouxe meu carro porque ouvi falar bem da sua oficina. Espero não me arrepender.", "Olha, não tenho o dia todo. Dá pra resolver isso rápido?", "Já fui em três oficinas e ninguém resolveu. Não me venha com desculpas.", "Se você não conseguir consertar, vou direto pro Procon.", "Quero um serviço barato e imediato. Sem enrolação.","Oi! É minha primeira vez aqui. Espero que você possa me ajudar.", "Não entendo nada de carro, mas ele tá fazendo um som meio... metálico?", "Desculpa incomodar, mas meu carro morreu no meio da rua. Pode ver pra mim?", "Você parece saber o que faz. Só não me cobre um rim, por favor!", "O motor está falhando na ignição. Acho que é a vela ou talvez o sensor de fase.", "Fiz uma análise com scanner e deu erro no módulo. Você trabalha com isso?", "Preciso trocar o fluido de freio e revisar a suspensão. Pode fazer hoje?", "O carro está puxando pra direita. Já verifiquei a calibragem, então deve ser alinhamento.", "Meu carro tá com mais tremedeira que minha sogra no frio. Socorro!", "Se você conseguir fazer esse carro andar, te pago um pastel e um caldo de cana.", "O rádio só toca música triste. Será que é o carro que tá deprimido?", "O carro tá fazendo um som tipo ‘clac-clac-clac’. Isso é normal ou ele tá virando um maracas?"}
 	funcao inicio()
 	{
 		
 		escreva("*                    )             )  (              (    (       *            (                         )   (     \n")
 		escreva(" (  `           (    ( /(   (      ( /(  )\\ )   (       )\\ ) )\\ )  (  `           )\\ )    (       *   )  ( /(   )\\ )  \n")
 		escreva(" )\\))(   (      )\\   )\\())  )\\     )\\())(()/(   )\\     (()/((()/(  )\\))(      (  (()/(    )\\    ` )  /(  )\\()) (()/(  \n")
-		escreva("((_)()\\  )\\   (((_) ((_)\\((((_)(  ((_)\\  /(_))(((_)     /(_))/(_))((_)()\\     )\\  /(_))((((_)(   ( )(_))((_)\\   /(_)) \n")
+		escreva("((_)()\\  )\\   (((_) ((_)\\((((_)(  ((_)\\  /(_))(((_)     /(_))/(_))((_)()\\    )\\  /(_))((((_)(   ( )(_))((_)\\   /(_)) \n")
 		escreva("(_()((_)((_)  )\\___  _((_))\\ _ )\\  _((_)(_))  )\\___    (_)) (_))  (_()((_) _ ((_)(_))   )\\ _ )\\ (_(_())   ((_) (_))   \n")
 		escreva("|  \\/  || __|((/ __|| || |(_)_\\(_)| \\| ||_ _|((/ __|   / __||_ _| |  \\/  || | | || |    (_)_\\(_)|_   _|  / _ \\ | _ \\  \n")
 		escreva("| |\\/| || _|  | (__ | __ | / _ \\  | .` | | |  | (__    \\__ \\ | |  | |\\/| || |_| || |__   / _ \\    | |   | (_) ||   /  \n")
@@ -117,8 +118,7 @@ programa
 			escolha(sorteio){
 					 
 			}
-		}senao{
-			se(sorteio <= 99){
+		}senao se(sorteio <= 99){
 				sorteio = u.sorteia(1, 5)
 				escolha(sorteio){
 
@@ -127,5 +127,89 @@ programa
 				sorteio = u.sorteia(1, 3)
 			}
 		}
+				funcao camaro(){
+          cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)])
+		escreva(nome_mecanico, ": Qual seria o seu carro?")
+		escreva(Nome_cliente, ": Um camaro da cor ", cores[u.sorteia(0, 9)])
+
+  				escreva("                                                        ....,,,,,***///((/((/(/(\n")
+		escreva("                                            .   ..... .(*,,,//**,*,,***,******//\n")
+		escreva("                               .... ....*//*,   ...,,, *(.#/*.. ,,..,.*&**,*/*//\n")
+		escreva("                    ...............*.*..........   ,,,,,...*///((((((/#,,,,,..,,\n")
+		escreva("          ..................... ,....          .....,..     ..,/,..###%%****,*,*\n")
+		escreva("   .... .................... /,..          ..     .      .. ,/.(((((#%,.,,,*,*/*\n")
+		escreva("  . .................//////.*#**......           / ..,...((*,#((/(, . .,*,...,,,\n")
+		escreva("................*/***/..,**,,,......   .       .  .  ,(###*...... . *.#..,,.,,,,\n")
+		escreva("   .........,#%///(#( ,..      ../  .,**,,,.../((((((/..          ,., ...,,,,,**\n")
+		escreva("...........*/(*%#(((/***,,......*****,...**/((((,.        ((.     (%..,.......,,\n")
+		escreva("..... .....(.*/*,*,,*,...,,***,.  ....,,,*(#(.       (#/., ,     .  ......,**,,*\n")
+		escreva("........... // ,.,,,,,,.......   .....*.     .   ((. ,,            . . ........ \n")
+		escreva("...........    .,,,..    %@@/**%.,,..., ,   . .  .             . ...........,...\n")
+		escreva("......,..  .,        .         .  .. . ... . *               .................  \n")
+		escreva(".....,... .  *,,.            .@,  .*.,/ ,(.                   ................. \n")
+		escreva(".........        .....     ...,*.   &, .,               ... ................    \n")
+		escreva(" ..........               .....                       ......... .........       \n")
+		escreva("............                                  .........................          \n")
+
+		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente")			
+		}
+		funcao fiatuno(){
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+	escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)])
+	escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+	escreva(Nome_cliente, ": Um fiat uno ", cores[u.sorteia(0, 9)])
+
+escreva("********************************************************************************\n")
+escreva("******************************************/*************************************\n")
+escreva("***************************************/****************************************\n")
+escreva("***************************,,,/#%%%&&&@@@@@@@@&&&%&,,#,,&&%((*,,,***************\n")
+escreva("***********************,&(,,,,,,,%%&,,,,,,*##%&%((/,,,,,%,,,,,,,((***..%********\n")
+escreva("********************,%/,,,,,,,,,%%#,/###(*(#,&&,#%,&,,/,,%,,,,,,,#(,,,,. %******\n")
+escreva("***************#*&#@,,.,,(,((/*%%(,,(((((((,,%&(((((,,,,,,(,,%%%%%##,,,,*,.#****\n")
+escreva("************,.., (%#(///***/////((((((((((((#(#####,.,,,,*,&%%%%%%%%%*#*/(/#%.**\n")
+escreva("***.   ./                  /..            /*/        ..*,*..,/..,,,,,,*,,,,,,,,*\n")
+escreva("*    ,((##                                   ##.      .&,/*./(.....,,,,,,,,,,,(/\n")
+escreva("**/*#@@&@@%&,,/,,,,,,,,,,,,,/,,,,*,,,,,***#@%%&&&&****/%%%###(*******,,,,,,,,(..\n")
+escreva("*###@(%&%%&%*,/,,,,,,,,,,,,,(*,,,,,,,,,,#%@@@@@@&@@@@&&@@&&%%////////////////##*\n")
+escreva("**#(&.(,,@&&&///***,********%**********(&@@@&&&@@@@@@@@@@@@&&&&&&&&&&&&&&&&&&&&&\n")
+escreva("***%%@/,/,#&&@&&&&&&&&&&&&&&&%(*,/%&#**%@@&@,,@#&&@@@@@@@@@@@@@@@&,(%/#(*,@&&%%%\n")
+escreva("***(&(%,*,&@&@%**********%@%%%&&&@@@@@@@@&@***%*@@@@@@@@@@@@@@@&&&&&&&&&&&&&&%,,\n")
+escreva("***//&&%&&@@@**************@@@@@@@@,,,,,,&@@*(@**&@@&@&,,,,,,,,@@@@@@@@@@@&@,,,,\n")
+escreva(",,,,,,,,,,,**********//////////((((((///*(&@%@*#%@@&&*,,,,,,,,,,@@@@@@@@@&&*,,,,\n")
+escreva(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*******//(@@@@@@@@@//////////****@@@@@@&(,,,,,,\n")
+
+		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente")
 	}
-}
+			funcao corolla(){
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+	escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)])
+	escreva(nome_mecanico, ": Qual seria o seu carro?")
+	escreva(Nome_cliente, ": Um corolla ", cores[u.sorteia(0, 9)])
+
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@(%#(((////**********&@ ****/.///,*@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@/((/////*******,,,,,,,/@.********,//////*&@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@*//********,,,,,,,,,,,,,.@&.**(&&&@&*..////*/(,*@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&&@&&%..&@@&@@@@@@@@@&@@@@@*%@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&(*.@&&&&&@@&&%%%%%%&&%&&&&&&&&&&@@@@@@@@@@@\n")
+		escreva("@@@@@@@@,@#%..,.(/.#*.  ./%& *#%#./&,@&&&@&&  %&%%%%%%%%%%%%%%%%%%&&%. &&&@@@@@@\n")
+		escreva("@@@@@@ @@@/%&&&&&&&&&&&&%@&&@@@%,.*&&&&&&%. .   %%%%%%%%%%%%%%%%%%%(*** &%@@@@@@\n")
+		escreva("@@@@@@,%*.   /@@@@@&     .  #%%%%%#.%%%%&.***/( (%%%%#%%%%%%%%%%%%%.,*(,#%@@@@@@\n")
+		escreva("@@@@@@ .                  .   &%%%. *%%% .*(/** *#%%%%#####(((((##( *,.,#&@@@@@@\n")
+		escreva("@@@@@@&(.......,***//(((###&%%#*///(%%%%  .,*(% .((//(#%&@@@@@@@*    //#@@@@@@@@\n")
+		escreva("@@@@@@@@@@@       (@@@@@@@@&%#(/,..        //*              ..,/(#%&&@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@&%#(/*,,..                     .*(#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+
+		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente")
+		}
