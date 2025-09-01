@@ -1,8 +1,8 @@
 funcao mustang(){
-Nome_cliente = nome_cliente[u.sorteio(0, 29)]
-escreva(Nome_cliente, ": ", frases_cliente[u.sorteio(0, 19)])
+cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)])
 escreva(nome_mecanico, ": Qual seria o seu carro?")
-escreva(Nome_cliente, ": Um Mustang ", cores[u.sorteio(0, 9)]
+escreva(Nome_cliente, ": Um Mustang ", cores[u.sorteia(0, 9)]
 
 escreva("                                                      ///////////////               \n")
 escreva("                                **&#((((((///*///////*** .%%,*/    (#%%#        \n")
