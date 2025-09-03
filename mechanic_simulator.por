@@ -212,7 +212,7 @@ programa
 	funcao camaro(){
           cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Camaro da cor ", cores[u.sorteia(0, 9)], "\n\n")
 
   		escreva("                                                        ....,,,,,***///((/((/(/(\n")
@@ -239,7 +239,7 @@ programa
 	funcao fiat_uno(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Fiat Uno ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("********************************************************************************\n")
@@ -266,7 +266,7 @@ programa
 	funcao corolla(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Corolla ", cores[u.sorteia(0, 9)], "\n\n")
 
 
@@ -295,7 +295,7 @@ programa
 	funcao celta(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Celta ", cores[u.sorteia(0, 9)], "\n\n")
 
 
@@ -320,7 +320,7 @@ programa
 	funcao civic(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Civic ", cores[u.sorteia(0, 9)], "\n\n")
 	
 		escreva("                                     ./(#&&&&&&&&&&&&&(//                       \n")
@@ -343,7 +343,7 @@ programa
 		funcao fiesta(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Fiesta ", cores[u.sorteia(0, 9)], "\n\n")
 	
 		escreva("            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@&&&&&&&@@@@@@@@@@@@@           \n")
@@ -368,7 +368,7 @@ programa
 	funcao gol(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Gol ", cores[u.sorteia(0, 9)], "\n\n")
 		
 		escreva("......                                                                ..........\n")
@@ -393,7 +393,7 @@ programa
 	funcao ford_ka(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Ford Ka ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("                                                                                \n")
@@ -418,7 +418,7 @@ programa
 	funcao hb20(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Hb20 ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -445,7 +445,7 @@ programa
 	funcao Hilux(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Uma Hilux ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -471,7 +471,7 @@ programa
 		funcao mustang(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Mustang ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("                                                      ///////////////           \n")
@@ -493,7 +493,7 @@ programa
 		funcao onix(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Onix ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("                                                       (                      \n")
@@ -518,7 +518,7 @@ programa
 	funcao palio(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Palio ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("                                            ./#%&%%#/.  (%%#%%#%                \n")
@@ -545,7 +545,7 @@ programa
 	funcao porshe911(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Uma Porshe 911 ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -576,7 +576,7 @@ programa
 		funcao ranger(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Uma Ranger ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("@@@@@@@&&&&&&%%%%%%%%%%%&&&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -604,7 +604,7 @@ programa
 	funcao sandeiro(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Sandeiro ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva(".                                ...&*,*/(#%%%##((/*(.    .  .                                   \n")
@@ -632,7 +632,7 @@ programa
 	funcao fox(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Fox ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -659,7 +659,7 @@ programa
 	funcao voyage(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Voyage ", cores[u.sorteia(0, 9)], "\n\n")
 
 		escreva("                                *((((####%%&&#######%##%%%%                     \n")
@@ -704,7 +704,7 @@ programa
 	funcao fit(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Honda Fit ", cores[u.sorteia(0, 9)], "\n\n")
 		
 		escreva("                                 .. ..    ..    ..  (....,@%(%&*....            \n")
@@ -731,7 +731,7 @@ programa
 	funcao siena(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Siena ", cores[u.sorteia(0, 9)], "\n\n")
 		
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&,**..    ..****/(&@@@@@@@@@@@@@@@@@@@\n")
