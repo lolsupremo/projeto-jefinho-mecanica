@@ -41,6 +41,8 @@ programa
 
 			tutorial_boss()
 
+			sorteio_carro()
+
 			
 			
 		}
@@ -111,17 +113,100 @@ programa
 	funcao sorteio_carro(){
 		inteiro sorteio = u.sorteia(1, 100)
 		se(sorteio <= 80){
-			sorteio = u.sorteia(1, 14)
+			sorteio = u.sorteia(1, 13)
 			escolha(sorteio){
-					 
+				caso 1:
+				gol() 
+				pare
+					
+				caso 2:
+				voyage()
+				pare
+
+				caso 3:
+				fox() 
+				pare
+				
+				caso 4:
+				fiat_uno() 
+				pare
+
+				caso 5:
+				onix() 
+				pare
+
+				caso 6:
+				palio() 
+				pare
+
+				caso 7:
+				ford_ka() 
+				pare
+
+				caso 8:
+				hb20() 
+				pare
+				
+				caso 9:
+				sandeiro() 
+				pare
+
+				caso 10:
+				celta() 
+				pare
+
+				caso 11:
+				fiesta() 
+				pare
+
+				caso 12:
+				fit()
+				pare
+
+				caso 13:
+				siena()
+				pare
+
+				
 			}
 		}senao se(sorteio <= 99){
 				sorteio = u.sorteia(1, 5)
 				escolha(sorteio){
+					caso 1:
+					compass()
+					pare
 
+					caso 2:
+					ranger()
+					pare
+
+					caso 3:
+					Hilux()
+					pare
+
+					caso 4:
+					civic()
+					pare
+
+					caso 5:
+					corolla()
+					pare
 				}
 			}senao{
 				sorteio = u.sorteia(1, 3)
+				escolha(sorteio){
+					caso 1:
+					mustang()
+					pare
+
+					caso 2:
+					camaro()
+					pare
+
+					caso 3:
+					porshe911()
+					pare
+				}
 			}
 		}
 	funcao camaro(){
@@ -306,7 +391,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	} 
 	funcao ford_ka(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Ford Ka ", cores[u.sorteia(0, 9)], "\n\n")
@@ -331,7 +416,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 	funcao hb20(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Hb20 ", cores[u.sorteia(0, 9)], "\n\n")
@@ -358,7 +443,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 	funcao Hilux(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Uma Hilux ", cores[u.sorteia(0, 9)], "\n\n")
@@ -384,7 +469,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 		funcao mustang(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Mustang ", cores[u.sorteia(0, 9)], "\n\n")
@@ -406,7 +491,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 		funcao onix(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Onix ", cores[u.sorteia(0, 9)], "\n\n")
@@ -431,7 +516,7 @@ programa
 	}
 
 	funcao palio(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Palio ", cores[u.sorteia(0, 9)], "\n\n")
@@ -458,7 +543,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 	funcao porshe911(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Uma Porshe 911 ", cores[u.sorteia(0, 9)], "\n\n")
@@ -489,7 +574,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 		funcao ranger(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Uma Ranger ", cores[u.sorteia(0, 9)], "\n\n")
@@ -517,7 +602,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 	funcao sandeiro(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Sandeiro ", cores[u.sorteia(0, 9)], "\n\n")
@@ -545,7 +630,7 @@ programa
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 	funcao fox(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Fox ", cores[u.sorteia(0, 9)], "\n\n")
@@ -567,17 +652,17 @@ programa
 		escreva("@@@@&&&&&%%##((//    ....,.,,,,,...... ..,%&@/*.##%%&&@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@&&&&%%###((///////////////////***,.. /@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
-		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n\n")
 	
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 	funcao voyage(){
-		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 29)]
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
 		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
 		escreva(Nome_cliente, ": Um Voyage ", cores[u.sorteia(0, 9)], "\n\n")
 
-		escreva("*((((####%%&&#######%##%%%%                     \n")
+		escreva("                                *((((####%%&&#######%##%%%%                     \n")
 		escreva("                           //((((###&&##&&%%*(/((((##******&%(/                 \n")
 		escreva("                        ((#(#&###&%%&&&#/#%%&#(((((##(/((((((#//#*.             \n")
 		escreva("                ////((((((#%%%###%%%%((%%&#(////////////////(//((//(#%          \n")
@@ -585,9 +670,86 @@ programa
 		escreva("           %##(#%/(((*#@&#//////#@@@@@&#&&&&&&&&&&&&&&&%(///(&@#@@&&&&          \n")
 		escreva("          ,%& ,, &&&&&&&&&&&###&@&,#*@&@&&&&&&&&&&&&&&&&&&&&@&%/#@@&&%          \n")
 		escreva("           &@@@@@@@&&@#&%&%#&&&@&/.(((@@&&&&&&&&&&&%&&&&&&&@@%/#(,              \n")
-		escreva("              @@@@@@@@ @@@@@@@@@&/@**.&     @@@@@..........@@@%,##              \n")
+		escreva("              @@@@@@@@ @@@@@@@@@&/@**.&     @@@@@..........@@@%,##              \n\n")
 		escreva("          .,*/(#%&&&&&&&&&&&&&&&@@&#&&&&&&%%%%#(/*,,...     \n")
             	
+		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
+	}
+	funcao compass(){
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
+		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
+		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(Nome_cliente, ": Uma Compass ", cores[u.sorteia(0, 9)], "\n\n")
+
+		escreva("                                             ........      /                    \n")
+		escreva("                               *((#%%&&&@@&#(##%%%%%%#.,,###%###/,*,.           \n")
+		escreva("                           ,(#%%%%%%((#%&@@@@@&&&&%%%,(#######(/////// .        \n")
+		escreva("                        *##%&%%%(##&&@@&&@@@@&&&&&&,,*####((((#,,*((#(&. .      \n")
+		escreva("                     /#%&%%%%%#%%&&@@&&&@@@@@@&&@&,.@%&@@@@&##%&&(,.....   .    \n")
+		escreva("             .  . ..............,,.........,...., .,,,,,,...../*.....,..    (   \n")
+		escreva("        ..,,,,,,,,/*,,,,,,,,,,...........,.,........  ...,.,,,,,,,.,.....,,,,   \n")
+		escreva("       (/&@%&/#@%&@(#@%#&@&@&&%(*((#((.*.(............................,.%@@@#   \n")
+		escreva("       ../#%%%&&&@@&&&@&&@&&&,,,...........*,#%@@@@@&.,.,,,,,,,,,,,,,,,&%((@@   \n")
+		escreva("      *%%&@@@@@@@@@@@@@@@@@@&&&@@@@@%.....*(&@@&%@@@@#*,,,,,,,,****,,,*%%/*&@   \n")
+		escreva("       %*/*/,,,,,,,,,,#/,,,,..&&&&&&@@(,,//@%&@@@@&%%@**,,,,,,,/((%@@@@%&(%#    \n")
+		escreva("       /@@@@/**,,,,,,,,@@@@@&,.........*//@@(%#%#@/*&%*/&@@@@@@@@@@@@@@&&.&*    \n")
+		escreva("       (@&&&@@@@@@@@@@@@@@@@@@%%%%%%%%%%#%&&&%%*#&%&(&&#*,,,,,.....,@@@@%(#*    \n")
+		escreva("         @@@@@@@@@@@@&&&%##(//*(&&@@@@@@@&&%@%&%&#&,%&@@@@@@@@@@@@@@@@@@@@(     \n")
+		escreva("        ..,@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%*@#&%# %&&&&%%#(*,..                \n")
+		escreva("           .,/(##%%%%%&&&&@@@@@@@@@@@@@@@@@@&%%%%&@/                            \n\n")
+
+            	
+		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
+	}
+	funcao fit(){
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
+		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
+		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(Nome_cliente, ": Um Honda Fit ", cores[u.sorteia(0, 9)], "\n\n")
+		
+		escreva("                                 .. ..    ..    ..  (....,@%(%&*....            \n")
+		escreva("                           &,,,*....((((((((((###..%*##////#######(%##..        \n")
+		escreva("                       %,****...... ###((####(#.,#%%%(////*//((/////(((/ .      \n")
+		escreva("                  .&*.////#........(###((#### ,(/*/(,&%,*,,,,/,,,,,**##( ../    \n")
+		escreva("                     .. ...   .*#&&%%@%%@@@,##((*@@&@@#&@&#   .   ....,.,....   \n")
+		escreva("          .............................  .........,,,..  .. /* ....,,..    .,   \n")
+		escreva("       . ......................##(,,(#(..          ......,,,,,,*,,,.......,,*.  \n")
+		escreva("      .#.. .. ........  .(%&&&&@%&,,&&..        ..,,,,,,**********,,,,,,,&@@@.  \n")
+		escreva("       %@@%@&*(@&@@&@&%&&@@@#,%&@#.........#@@,*,,,,*****************,,,%%@&%&  \n")
+		escreva("    ,..... . ..   .           ..... ,,,,%%%%%%@@/,***********,, ....,,*&@*%/.@  \n")
+		escreva("    &&%&&&%%%%%%@&&&%%(*#&&&&(@//**,,,,@@&@  @&&@*,**,,...***//*//((/&%&@*&@(   \n")
+		escreva("    @&&%@@%%&%%%@&@&@@@@@&&&&&&&///***,@&&(%# @&@**/////# #&&&%##&   @&&&@@.    \n")
+		escreva("    &&%@@@@@&@@@@@@@@&&@@&&&&&&&&#(///@@@*@(&@@&@##%@@@@&&@@&&&%%%%###&&&%      \n")
+		escreva("          %@@@@@@@@@@@@@@@&&&&&&@@&@&&@@&&@@@@&@@@&&%%##((/,                    \n")
+		escreva("    .,*/(#%&&&@@@@@@@@@@@@@@@@@@@@@@@@@@&@%##&/,                                \n")
+		escreva("                    .*/////(///*,.                                              \n\n")
+
+
+            	
+		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
+	}
+	funcao siena(){
+		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
+		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
+		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
+		escreva(Nome_cliente, ": Um Siena ", cores[u.sorteia(0, 9)], "\n\n")
+		
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&,**..    ..****/(&@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   .**      *     *@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@ ..                  .*,.       ., .... /(@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@ .. . ........., ......***..,%&@@#..,,......,*/@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@%###(((((((///////************,*****  ,,,,,....,...,,*****//(@@@\n")
+		escreva("@@@@@@@@@@(/**********************.****,,*******,,,*********,..**,*,,,..,*****@@\n")
+		escreva("@@@@@@@@@,,*/(##%##(*,,,,,.. .. .....,**,,,******,,,,,,,,,,,,,,,,,,,,,,,,**%,,*@@\n")
+		escreva("@@@@@@@@,   . /@...,**%,,.   .,,,,,..,,,*,*,     ,*....,,,,,,,,,,,,,,,,,,   #,,%@\n")
+		escreva("@@@@@@@%.,%%%%%%%%#,,,,,,,,,,,,.,.,...,,,.  .     .,..............**/,,.  . ..,@@\n")
+		escreva("@@@@@@@@  *#&%%%%#,.,,,,,,,.......,..... .     /   ......................, ,.*@@@\n")
+		escreva("@@@@@@@@ .                #(//&&* ,.....  / # , .  ,,,,*,.............   . ,&@@@@\n")
+		escreva("@@@@@@@&,,    ...  ..,(,,,,,,,...,/,... . , ,..., .../(///((((((####%    ., &@@@@\n")
+		escreva("@@@@@@@@@@@@&         #*...............   ,... ./ .........,,,,,**,,,...*%%&&@@@@\n")
+		escreva("@@@@@@@@@&%%#(*..  ..................      .  .  ,,,****//(((##%%%%&&&&@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@&&&%%%###((///***,,,,.....        ####%%%&&&&@@@@@@@@@@@@@@@@@@@@@@@@\n")
+   	
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
 }
