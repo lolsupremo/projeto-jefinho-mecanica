@@ -6,7 +6,7 @@ programa
 	cadeia carros_boss[2] = {"Marea", "Peugeot 206"}
 	cadeia nome_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina, continuar
-	inteiro dinheiro = 1000, escolhas, dia
+	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0, horario = 0
 	cadeia cores [10] = {"preto", "branco", "cinza", "cinza santos", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	cadeia frases_cliente[20] = {"Bom dia, meu carro está fazendo um barulho estranho. Pode dar uma olhada?", "Preciso de um serviço rápido, mas que resolva de vez. Confio no seu trabalho.", "Meu veículo está com dificuldade de ligar. É algo sério?", "Trouxe meu carro porque ouvi falar bem da sua oficina. Espero não me arrepender.", "Olha, não tenho o dia todo. Dá pra resolver isso rápido?", "Já fui em três oficinas e ninguém resolveu. Não me venha com desculpas.", "Se você não conseguir consertar, vou direto pro Procon.", "Quero um serviço barato e imediato. Sem enrolação.","Oi! É minha primeira vez aqui. Espero que você possa me ajudar.", "Não entendo nada de carro, mas ele tá fazendo um som meio... metálico?", "Desculpa incomodar, mas meu carro morreu no meio da rua. Pode ver pra mim?", "Você parece saber o que faz. Só não me cobre um rim, por favor!", "O motor está falhando na ignição. Acho que é a vela ou talvez o sensor de fase.", "Fiz uma análise com scanner e deu erro no módulo. Você trabalha com isso?", "Preciso trocar o fluido de freio e revisar a suspensão. Pode fazer hoje?", "O carro está puxando pra direita. Já verifiquei a calibragem, então deve ser alinhamento.", "Meu carro tá com mais tremedeira que minha sogra no frio. Socorro!", "Se você conseguir fazer esse carro andar, te pago um pastel e um caldo de cana.", "O rádio só toca música triste. Será que é o carro que tá deprimido?", "O carro tá fazendo um som tipo ‘clac-clac-clac’. Isso é normal ou ele tá virando um maracas?"}
@@ -41,6 +41,12 @@ programa
 
 			tutorial_boss()
 
+			enquanto(dia > 5)
+			erros_comuns = 0
+			erros_evento = 0
+			erros_raros = 0
+			erros_ultra = 0
+			
 			sorteio_carro()
 
 			
@@ -111,108 +117,195 @@ programa
 			limpa()
 	}
 	funcao sorteio_carro(){
+		logico loop = verdadeiro
 		inteiro sorteio = u.sorteia(29, 30)
 		se(sorteio == 30){
 			evento_especial()
-		}
-		sorteio = u.sorteia(1, 100)
-		se(sorteio <= 80){
-			sorteio = u.sorteia(1, 13)
-			escolha(sorteio){
-				caso 1:
-				gol() 
-				pare
-					
-				caso 2:
-				voyage()
-				pare
-
-				caso 3:
-				fox() 
-				pare
-				
-				caso 4:
-				fiat_uno() 
-				pare
-
-				caso 5:
-				onix() 
-				pare
-
-				caso 6:
-				palio() 
-				pare
-
-				caso 7:
-				ford_ka() 
-				pare
-
-				caso 8:
-				hb20() 
-				pare
-				
-				caso 9:
-				sandeiro() 
-				pare
-
-				caso 10:
-				celta() 
-				pare
-
-				caso 11:
-				fiesta() 
-				pare
-
-				caso 12:
-				fit()
-				pare
-
-				caso 13:
-				siena()
-				pare
-
-				
-			}
-		}senao se(sorteio <= 99){
-				sorteio = u.sorteia(1, 5)
+		} senao {
+			sorteio = u.sorteia(1, 100)
+			se(sorteio <= 80){
+				sorteio = u.sorteia(1, 13)
 				escolha(sorteio){
 					caso 1:
-					compass()
+					gol() 
 					pare
-
+					
 					caso 2:
-					ranger()
+					voyage()
 					pare
-
+	
 					caso 3:
-					Hilux()
+					fox() 
 					pare
-
+				
 					caso 4:
-					civic()
+					fiat_uno() 
 					pare
 
 					caso 5:
-					corolla()
-					pare
-				}
-			}senao{
-				sorteio = u.sorteia(1, 3)
-				escolha(sorteio){
-					caso 1:
-					mustang()
+					onix() 
 					pare
 
-					caso 2:
-					camaro()
+					caso 6:
+					palio() 
 					pare
 
-					caso 3:
-					porshe911()
+					caso 7:
+					ford_ka() 
+					pare
+
+					caso 8:
+					hb20() 
+					pare
+				
+					caso 9:
+					sandeiro() 
+					pare
+
+					caso 10:
+					celta() 
+					pare
+
+					caso 11:
+					fiesta() 
+					pare
+
+					caso 12:
+					fit()
+					pare
+
+					caso 13:
+					siena()
 					pare
 				}
-			}
-		}
+				enquanto(loop){
+						leia(escolhas)
+						escolha(escolhas){
+							caso 1:
+							dinheiro = dinheiro + 100
+							horario = horario + 3
+							loop = falso
+							pare
+	
+							caso 2:
+							dinheiro = dinheiro + 100
+							horario++
+							sorteio = u.sorteia(1, 3)
+							se(sorteio == 3){
+								erros_raros++
+							}
+							loop = falso
+							pare
+
+							caso 3: 
+							horario++
+							loop = falso
+							pare
+
+							caso contrario:
+							escreva("Informe um comando valido ")
+							pare
+						}
+					}
+			}senao se(sorteio <= 99){
+					sorteio = u.sorteia(1, 5)
+					escolha(sorteio){
+						caso 1:
+						compass()
+						pare
+
+						caso 2:
+						ranger()
+						pare
+
+						caso 3:
+						Hilux()
+						pare
+
+						caso 4:
+						civic()
+						pare
+
+						caso 5:
+						corolla()
+						pare
+					}
+					enquanto(loop){
+						leia(escolhas)
+						escolha(escolhas){
+							caso 1:
+							dinheiro = dinheiro + 150
+							horario = horario + 3
+							loop = falso
+							pare
+	
+							caso 2:
+							dinheiro = dinheiro + 150
+							horario++
+							sorteio = u.sorteia(1, 3)
+							se(sorteio == 3){
+								erros_raros++
+							}
+							loop = falso
+							pare
+
+							caso 3: 
+							horario++
+							loop = falso
+							pare
+
+							caso contrario:
+							escreva("Informe um comando valido ")
+							pare
+						}
+					}
+				}senao{
+					sorteio = u.sorteia(1, 3)
+					escolha(sorteio){
+						caso 1:
+						mustang()
+						pare
+
+						caso 2:
+						camaro()
+						pare
+
+						caso 3:
+						porshe911()
+						pare
+					}
+					enquanto(loop){
+						leia(escolhas)
+						escolha(escolhas){
+							caso 1:
+							dinheiro = dinheiro + 200
+							horario = horario + 3
+							loop = falso
+							pare
+	
+							caso 2:
+							dinheiro = dinheiro + 200
+							horario++
+							sorteio = u.sorteia(1, 3)
+							se(sorteio == 3){
+								erros_ultra++
+							}
+							loop = falso
+								pare
+
+							caso 3: 
+							horario++
+							loop = falso
+							pare
+
+							caso contrario:
+							escreva("Informe um comando valido ")
+							pare
+						}
+					}
+				}
+			}	
+	}
 	funcao camaro(){
           cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
@@ -758,54 +851,51 @@ programa
 	}
 	funcao evento_especial(){
 	
-	escreva("                                         --- Evento Aleatório ---\n\n")
-	escreva("Um cliente novo chegou com um carro de corrida. Ele está com pressa e oferece um pagamento extra por agilidade.\n\n")
+		escreva("                                         --- Evento Aleatório ---\n\n")
+		escreva("Um cliente novo chegou com um carro de corrida. Ele está com pressa e oferece um pagamento extra por agilidade.\n\n")
 	
-	escreva("////////////****************,,,,,,,,,,,,,,,,,,,,,..,.................,,.,,,,,,,,,,,,,,,,,,,,,****************///////////\n")
-	escreva("///////////****************,,,,,,,,,,,,,,,,,,,,..........................,,,,,,,,,,,,,,,,,,,,,****************//////////\n")
-	escreva("////////****************,,,,,,,,,,,,,,,,,,....................................,,,,,,,,,,,,,,,,,,,***************////////\n")
-	escreva("////////***************,,,,,,,,,,,,,,,,...........................................,,,,,,,,,,,,,,,,***************///////\n")
-	escreva("///////*************,*,,,,,,,,,,,,,,.................................................,,,,,,,,,,,,,,,,*************//////\n")
-	escreva("///////*************,,,,,,,,,,,,,,,.........................................@@@@@,....,,,,,**,.,,,,,,**************/////\n")
-	escreva("//////*************,,,,,,,,,,,,,.,...................... ....... ..........(*//..., ....//,.,,&.%,.,,,,,,..,********////\n")
-	escreva("/////*************,,,,,,,,,,,,,,......................         .(.  ...%&(.*.*,/@      .*...#@,&,#(,,,,*, ./(*******////\n")
-	escreva("////*************,,,,,,,,,,,,,.....,,.............       .,   %%&  &&*&%&(%###***, ...  .,.&,@,@##/,,,,/((&**********///\n")
-	escreva("////************,,,,,,,,,,,,,/&&%%***,..#....... .          #%/%#((/(/#@#@&&%#(((((##  ,,..   %&@&%@%%%%%%%%#(*******///\n")
-	escreva("////************,,,,,,,,,,,.%&&@&.&@@@@@@%%..... .*..,,,,,,,,,****,.**/*.**  ..,.*,.,.. ...,,,,%&&&&&%&&&&&&@@%******///\n")
-	escreva("///*************,,,,&@@,,,,&%%% @@&@@@@&#%@..(**...,,*..,..*(((%**/(&(*. **,,**. .....  ./%((@@&@@@&&%%%###%@%(******///\n")
-	escreva("////***********,@@@@@@@,,,,@&@@/@@@@@/**,/,,,%&*(/*.#/&&&&&%%#%*/***** /*/@@@**//(%%*%/(%((&&@@@@%@@&&&&&&((&(%******///\n")
-	escreva("////**********&@@@@@@@@,,,,,@@@..%,.,,/,*@@//&&&(@#%%&&&@@@@@&%%/#&&#&///((/#(#(#(/((//&&%%@&@@@@@@@@&@&@&(,&///****////\n")
-	escreva("////********%&@@@@@@&%*/,,..,,.,,/,**/&%/(&&&&&&@%&&&&@@@&&@&%%@%(@%@@&&@@@@@@@@@@@&&&&&&&&&&&&@@(/*//(%&&%((///////////\n")
-	escreva("////********/%%/*%/%%.,,...,,,, ///(&&@@@####%%%@%%%%@%%%@#*/////&/@@@@@@@@@@@@@&&%&&&&@@@@%*********************///////\n")
-	escreva("///*******/*,***.%.%@,..,*.,***@@@((((#%%&&&@@@, &&&&%%&@%//,@@&(%&@@@@@@@@@@@@@@@&#***,,,,,,,,,,******************/////\n")
-	escreva("///////////.,,,# ****  *,@#*(##,*%#.,,%**&*   ..,@&&@@@/(&(%%@%%(&//(/****,,,,,,,,,,,,,,,,,,,,,,,*****************//////\n")
-	escreva("//////////(.,,,#.@@@@%//*/**%.....,*/*%    ******@&&@@@#@&&((((@*%@**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*****************/////\n")
-	escreva("//////////(&@@@#,,*.,%*%/(*,../,(**#,,  ,/,,,*,*/&@@@@@&@&/.,.(&@%#/*,,,,..,,,,,,,,,,,,,,,,,,,,,,,****************//////\n")
-	escreva("/////////////(%&&&@@@@ #%*%,%*%%.%,%, .*,,*,.*/,*#&&&@@@@@@@&&//***,,,,,,,.,.,,,,,,,,,,,,,,,,,,,,,,**************///////\n")
-	escreva("//////////****/////(#%&&&@@@&%***,*/ ***,*#&&&%(////////****,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************///////\n")
-	escreva("//////////**************///#%&&&&@@&&&&&&&%%%%((/**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**************/////////\n")
-	escreva("///////////*********************//#%#(((/*****,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,***************//////////\n")
-	escreva("////////////****************,,,*,*,*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************///////////\n")
-	escreva("/////////////******************,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************////////////\n\n")
+		escreva("////////////****************,,,,,,,,,,,,,,,,,,,,,..,.................,,.,,,,,,,,,,,,,,,,,,,,,****************///////////\n")
+		escreva("///////////****************,,,,,,,,,,,,,,,,,,,,..........................,,,,,,,,,,,,,,,,,,,,,****************//////////\n")
+		escreva("////////****************,,,,,,,,,,,,,,,,,,....................................,,,,,,,,,,,,,,,,,,,***************////////\n")
+		escreva("////////***************,,,,,,,,,,,,,,,,...........................................,,,,,,,,,,,,,,,,***************///////\n")
+		escreva("///////*************,*,,,,,,,,,,,,,,.................................................,,,,,,,,,,,,,,,,*************//////\n")
+		escreva("///////*************,,,,,,,,,,,,,,,.........................................@@@@@,....,,,,,**,.,,,,,,**************/////\n")
+		escreva("//////*************,,,,,,,,,,,,,.,...................... ....... ..........(*//..., ....//,.,,&.%,.,,,,,,..,********////\n")
+		escreva("/////*************,,,,,,,,,,,,,,......................         .(.  ...%&(.*.*,/@      .*...#@,&,#(,,,,*, ./(*******////\n")	
+		escreva("////*************,,,,,,,,,,,,,.....,,.............       .,   %%&  &&*&%&(%###***, ...  .,.&,@,@##/,,,,/((&**********///\n")
+		escreva("////************,,,,,,,,,,,,,/&&%%***,..#....... .          #%/%#((/(/#@#@&&%#(((((##  ,,..   %&@&%@%%%%%%%%#(*******///\n")
+		escreva("////************,,,,,,,,,,,.%&&@&.&@@@@@@%%..... .*..,,,,,,,,,****,.**/*.**  ..,.*,.,.. ...,,,,%&&&&&%&&&&&&@@%******///\n")
+		escreva("///*************,,,,&@@,,,,&%%% @@&@@@@&#%@..(**...,,*..,..*(((%**/(&(*. **,,**. .....  ./%((@@&@@@&&%%%###%@%(******///\n")
+		escreva("////***********,@@@@@@@,,,,@&@@/@@@@@/**,/,,,%&*(/*.#/&&&&&%%#%*/***** /*/@@@**//(%%*%/(%((&&@@@@%@@&&&&&&((&(%******///\n")
+		escreva("////**********&@@@@@@@@,,,,,@@@..%,.,,/,*@@//&&&(@#%%&&&@@@@@&%%/#&&#&///((/#(#(#(/((//&&%%@&@@@@@@@@&@&@&(,&///****////\n")
+		escreva("////********%&@@@@@@&%*/,,..,,.,,/,**/&%/(&&&&&&@%&&&&@@@&&@&%%@%(@%@@&&@@@@@@@@@@@&&&&&&&&&&&&@@(/*//(%&&%((///////////\n")
+		escreva("////********/%%/*%/%%.,,...,,,, ///(&&@@@####%%%@%%%%@%%%@#*/////&/@@@@@@@@@@@@@&&%&&&&@@@@%*********************///////\n")
+		escreva("///*******/*,***.%.%@,..,*.,***@@@((((#%%&&&@@@, &&&&%%&@%//,@@&(%&@@@@@@@@@@@@@@@&#***,,,,,,,,,,******************/////\n")
+		escreva("///////////.,,,# ****  *,@#*(##,*%#.,,%**&*   ..,@&&@@@/(&(%%@%%(&//(/****,,,,,,,,,,,,,,,,,,,,,,,*****************//////\n")
+		escreva("//////////(.,,,#.@@@@%//*/**%.....,*/*%    ******@&&@@@#@&&((((@*%@**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,*****************/////\n")
+		escreva("//////////(&@@@#,,*.,%*%/(*,../,(**#,,  ,/,,,*,*/&@@@@@&@&/.,.(&@%#/*,,,,..,,,,,,,,,,,,,,,,,,,,,,,****************//////\n")
+		escreva("/////////////(%&&&@@@@ #%*%,%*%%.%,%, .*,,*,.*/,*#&&&@@@@@@@&&//***,,,,,,,.,.,,,,,,,,,,,,,,,,,,,,,,**************///////\n")
+		escreva("//////////****/////(#%&&&@@@&%***,*/ ***,*#&&&%(////////****,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************///////\n")
+		escreva("//////////**************///#%&&&&@@&&&&&&&%%%%((/**,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**************/////////\n")
+		escreva("///////////*********************//#%#(((/*****,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,***************//////////\n")
+		escreva("////////////****************,,,*,*,*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************///////////\n")
+		escreva("/////////////******************,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************////////////\n\n")
 
-	escreva("[1] Aceitar o desafio (+R$ 200 , +risco de falha) \n")
-	escreva("[2] Recusar (Sem bônus, sem risco)\n")
-	leia(escolhas)
+		escreva("[1] Aceitar o desafio (+R$ 400 , +risco de falha) \n")
+		escreva("[2] Recusar (Sem bônus, sem risco)\n")
+		leia(escolhas)
     
-    escolha(escolhas){
-        caso 1:
-            dinheiro = dinheiro + 200
-
-            
-            
-            
-        pare
-        caso 2:
-
-        pare
-    }
-    escreva("\nPressione ENTER para continuar...")
-    leia(continuar)
-    limpa()
+    		escolha(escolhas){
+    			caso 1:
+    			dinheiro = dinheiro + 400
+    			se(u.sorteia(1, 3) == 3){
+    				erros_evento++
+    			}
+    			horario = horario + 2
+    			pare
+    			caso 2:
+			horario++
+			pare
+		}
 	}
 }
