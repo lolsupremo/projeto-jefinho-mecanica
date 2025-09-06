@@ -12,6 +12,7 @@ programa
 	cadeia frases_cliente[20] = {"Bom dia, meu carro está fazendo um barulho estranho. Pode dar uma olhada?", "Preciso de um serviço rápido, mas que resolva de vez. Confio no seu trabalho.", "Meu veículo está com dificuldade de ligar. É algo sério?", "Trouxe meu carro porque ouvi falar bem da sua oficina. Espero não me arrepender.", "Olha, não tenho o dia todo. Dá pra resolver isso rápido?", "Já fui em três oficinas e ninguém resolveu. Não me venha com desculpas.", "Se você não conseguir consertar, vou direto pro Procon.", "Quero um serviço barato e imediato. Sem enrolação.","Oi! É minha primeira vez aqui. Espero que você possa me ajudar.", "Não entendo nada de carro, mas ele tá fazendo um som meio... metálico?", "Desculpa incomodar, mas meu carro morreu no meio da rua. Pode ver pra mim?", "Você parece saber o que faz. Só não me cobre um rim, por favor!", "O motor está falhando na ignição. Acho que é a vela ou talvez o sensor de fase.", "Fiz uma análise com scanner e deu erro no módulo. Você trabalha com isso?", "Preciso trocar o fluido de freio e revisar a suspensão. Pode fazer hoje?", "O carro está puxando pra direita. Já verifiquei a calibragem, então deve ser alinhamento.", "Meu carro tá com mais tremedeira que minha sogra no frio. Socorro!", "Se você conseguir fazer esse carro andar, te pago um pastel e um caldo de cana.", "O rádio só toca música triste. Será que é o carro que tá deprimido?", "O carro tá fazendo um som tipo ‘clac-clac-clac’. Isso é normal ou ele tá virando um maracas?"}
 	funcao inicio()
 	{
+		inteiro dinheiro_inicio_dia_anterior = 0
 		
 		escreva("*                    )             )  (              (    (       *            (                         )   (     \n")
 		escreva(" (  `           (    ( /(   (      ( /(  )\\ )   (       )\\ ) )\\ )  (  `           )\\ )    (       *   )  ( /(   )\\ )  \n")
@@ -41,16 +42,31 @@ programa
 
 			tutorial_boss()
 
-			enquanto(dia > 5)
-			erros_comuns = 0
-			erros_evento = 0
-			erros_raros = 0
-			erros_ultra = 0
-			
-			sorteio_carro()
+			enquanto(dia > 5){
+			se(dia > 1){
+				se(erros_comuns + erros_evento + erros_raros + erros_ultra != 0){
+					dinheiro = dinheiro - erros_comuns*200 - erros_evento*700 - erros_raros*300 - erros_ultra*400
+					escreva("Voce cometeu ", erros_comuns + erros_evento + erros_raros + erros_ultra, " erros e teve um prejuízo de R$ ", erros_comuns*200 + erros_evento*700 + erros_raros*300 + erros_ultra*400, " por serviços mal feitos e por compensação à clientes insaitisfeitos.")
+					erros_comuns = 0
+					erros_evento = 0
+					erros_raros = 0
+					erros_ultra = 0
+				}senao{
+					escreva("Você teve um dia perfeito e teve um lucro de R$ ", dinheiro - dinheiro_inicio_dia_anterior, " comparado ao inicio do dia anterior.")
+				}
+				escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia)
+			}
+			horario = 8
+			enquanto(horario > 18){
+				sorteio_carro()
+				se(horario > 18){
+					
+				}
+			}
+		
 
 			
-			
+			}	
 		}
 	}
 	funcao introducao(){
@@ -897,5 +913,44 @@ programa
 			horario++
 			pare
 		}
+	}
+	funcao falencia(){
+		escreva("                                                      ............ .                                                    \n")
+		escreva("                                             ...............................                                            \n")
+		escreva("                                        ..........................................                                      \n")
+		escreva("                                    .............,,**(((.....*(((((***................                                  \n")
+		escreva("                                 ..........**((((,((((**,,,,,###*##(#(((((**.............                               \n")
+		escreva("                               ........*/(((/##*##/#%##*,,,,(##########,##*###(*...........                             \n")
+		escreva("                             ......./######.######//**/*,,,,***//////#############/.........                            \n")
+		escreva("                           ......((###%#####(//*///%%%**,,,***#%%%%%///*//#(#%##*####(.........                         \n")
+		escreva("                         ......####(#%(##(//((&&&&&&&**%&(/**/&&&&&&&&&&&((((##%#/##(###.........                       \n")
+		escreva("                        ......(#,###%##((((&&&&&&&&&&&&&&#**((&&&&&&&&&&&&&&((((#%&##%,###........                      \n")
+		escreva("                       .....#%%**%%%%#(##&&&&&&&&&&((((((**((((((((((((&&&&&&&####%%%%%,%%#...........                  \n")
+		escreva("                     ......#%%%.%%%&###&&&&&&&&&&((((((((*((((((((((((&&&&&&&&&&###&%%%.*&%%,,.........                 \n")
+		escreva("            ......,,,,,,,,,,,,,*(%&###&&&&&&&&&&((((((((*#&&&&&&&&#(#&&&&&&&&&&&&%%%&&&&/&&&&**,,.....                  \n")
+		escreva("               ...,,,,,,,,,,,,,,,,*(#&&&&&%&&&&&(((((((**(/&&&&&&&&&&&%&&&&&&&&&&&&&&@@&%%@&&@*,,.....                  \n")
+		escreva("                 ...,,,,,,,,,,,,,,,,*%%%%%%%%%%%%((((((*(((((((((*%%%%%%%%%%&&&&&@@@@@@@&&%%&&*,......                  \n")
+		escreva("                    ..,,,,,,,,,,,,,,,**%%%%%%#%%%%%&((*/(((((((((((/(%%%%%%%%&&&&@@@@@@@@&%(&&#.......                  \n")
+		escreva("                       ..,,,,,,,,,,,,,***(######%%%#%%%%%(((((/((((((((%%%%%%%%&&&&@@@@@%(*,&&%........                 \n")
+		escreva("                  ....    ..,,,,,,,,,,,,***/####(#############(/(((((/(##%%%%%%%%%&&&&%&*.#%%%,........                 \n")
+		escreva("                  .......    .,,,,,,,,,,*,***/##///////*#####*/////////(#(###(###(&&&%#%,,####,........                 \n")
+		escreva("                    ..... ..    .,,,,,,,,,,**********************/////(((((((((/(&&&%##*.##/##........                  \n")
+		escreva("                   ...... .....    .,,,,,,,,,**********************/(((((((((/(&&&&&##%.####(,........                  \n")
+		escreva("                     ..... ..... .    .,,,,,,,,,,,,,,*****************///////&&&&&&###,###((,,........                  \n")
+		escreva("                     ....... .... ...    .........  .. .........,,****,,///&&&&&&((((,(((//,,.......                    \n")
+		escreva("                      ........... ......                . .,,,  . ,,,,,,,,,%%%//.///.////*,,.......                     \n")
+		escreva("                        ............    .   ..,,,,,******.....*/(   .,,,,,,,,**,**(***(***,.......                      \n")
+		escreva("                        ......,...,,...          .............,,,*/*   .,,,,,,,***,*(/***,........                      \n")
+		escreva("                        ........,,,,,,,..  .                    ......    ,,,,,,,,////**.........                       \n")
+		escreva("                           . .....,,,,,,,,,...................      .....   .,,,,,,,**.........  .,(,.                  \n")
+		escreva("                             . .....****///****/,....,............    .,,**    .,,,,,,,....     .,.*                    \n")
+		escreva("                                   .  . /*////////////(///////***,,.......,,,*   .,,,,,,,.    ,....,                    \n")
+		escreva("                                            *********************,,,.......         .,,,,,,,,......,                    \n")
+		escreva("                                                   ,,,,,,,,,,,,,,,,,                   .,,,,,.......                    \n")
+		escreva("                                                                                       ...,,,.......                    \n")
+		escreva("                                                                                     ...............                    \n")
+		escreva("                                                                                  ..................                    \n\n")
+		escreva("Infelizmente, a oficina não resistiu às dívidas e precisou fechar as portas.\nO motor do seu negócio fundiu, provando que o carro não é a única coisa que pode dar PT.")
+
 	}
 }
