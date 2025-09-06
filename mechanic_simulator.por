@@ -42,28 +42,39 @@ programa
 
 			tutorial_boss()
 
-			enquanto(dia > 5){
-			se(dia > 1){
-				se(erros_comuns + erros_evento + erros_raros + erros_ultra != 0){
-					dinheiro = dinheiro - erros_comuns*200 - erros_evento*700 - erros_raros*300 - erros_ultra*400
-					escreva("Voce cometeu ", erros_comuns + erros_evento + erros_raros + erros_ultra, " erros e teve um prejuízo de R$ ", erros_comuns*200 + erros_evento*700 + erros_raros*300 + erros_ultra*400, " por serviços mal feitos e por compensação à clientes insaitisfeitos.")
-					erros_comuns = 0
-					erros_evento = 0
-					erros_raros = 0
-					erros_ultra = 0
-				}senao{
-					escreva("Você teve um dia perfeito e teve um lucro de R$ ", dinheiro - dinheiro_inicio_dia_anterior, " comparado ao inicio do dia anterior.")
-				}
-				escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia)
+			enquanto(dia < 5){
+				se(dia != 1){
+					limpa()
+					se(erros_comuns + erros_evento + erros_raros + erros_ultra != 0){
+						dinheiro = dinheiro - erros_comuns*200 - erros_evento*700 - erros_raros*300 - erros_ultra*400
+						escreva("Voce cometeu ", erros_comuns + erros_evento + erros_raros + erros_ultra, " erros e teve um prejuízo de R$ ", erros_comuns*200 + erros_evento*700 + erros_raros*300 + erros_ultra*400, " por serviços mal feitos e por compensação à clientes insaitisfeitos.\n")
+						erros_comuns = 0
+						erros_evento = 0
+						erros_raros = 0
+						erros_ultra = 0
+					}senao{
+						escreva("Você teve um dia perfeito sem fazer cagadas em carros de clientes.\n")
+					}
+					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n")
+					dinheiro = dinheiro - 200*dia
+					escreva("aperte [enter] para proseguir ")
+					leia(continuar)
+					enquanto(continuar != ""){
+						escreva("\ntecla presionada errada aperte [enter] ")
+						leia(continuar) 
 			}
-			horario = 8
-			enquanto(horario > 18){
-				sorteio_carro()
-				se(horario > 18){
-					
+			limpa()
 				}
-			}
-		
+				horario = 8
+				enquanto(horario < 18){
+					limpa()
+					escreva("Dinheiro: R$", dinheiro, "           Dia: ", dia,"           Horario: ", horario, "h\n\n")
+					sorteio_carro()
+				}
+				dia++
+				se(dinheiro <= 0){
+					falencia()
+				}
 
 			
 			}	
@@ -134,7 +145,7 @@ programa
 	}
 	funcao sorteio_carro(){
 		logico loop = verdadeiro
-		inteiro sorteio = u.sorteia(29, 30)
+		inteiro sorteio = u.sorteia(1, 30)
 		se(sorteio == 30){
 			evento_especial()
 		} senao {
