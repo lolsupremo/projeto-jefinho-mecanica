@@ -7,7 +7,7 @@ programa
 	cadeia nome_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina, continuar
 	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0, horario = 0
-	cadeia cores [10] = {"preto", "branco", "cinza", "cinza santos", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
+	cadeia cores [10] = {"preto", "branco", "cinza", "prata", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	cadeia frases_cliente[20] = {"Bom dia, meu carro está fazendo um barulho estranho. Pode dar uma olhada?", "Preciso de um serviço rápido, mas que resolva de vez. Confio no seu trabalho.", "Meu veículo está com dificuldade de ligar. É algo sério?", "Trouxe meu carro porque ouvi falar bem da sua oficina. Espero não me arrepender.", "Olha, não tenho o dia todo. Dá pra resolver isso rápido?", "Já fui em três oficinas e ninguém resolveu. Não me venha com desculpas.", "Se você não conseguir consertar, vou direto pro Procon.", "Quero um serviço barato e imediato. Sem enrolação.","Oi! É minha primeira vez aqui. Espero que você possa me ajudar.", "Não entendo nada de carro, mas ele tá fazendo um som meio... metálico?", "Desculpa incomodar, mas meu carro morreu no meio da rua. Pode ver pra mim?", "Você parece saber o que faz. Só não me cobre um rim, por favor!", "O motor está falhando na ignição. Acho que é a vela ou talvez o sensor de fase.", "Fiz uma análise com scanner e deu erro no módulo. Você trabalha com isso?", "Preciso trocar o fluido de freio e revisar a suspensão. Pode fazer hoje?", "O carro está puxando pra direita. Já verifiquei a calibragem, então deve ser alinhamento.", "Meu carro tá com mais tremedeira que minha sogra no frio. Socorro!", "Se você conseguir fazer esse carro andar, te pago um pastel e um caldo de cana.", "O rádio só toca música triste. Será que é o carro que tá deprimido?", "O carro tá fazendo um som tipo ‘clac-clac-clac’. Isso é normal ou ele tá virando um maracas?"}
 	funcao inicio()
@@ -65,8 +65,8 @@ programa
 			}
 			limpa()
 				}
-				horario = 8
-				enquanto(horario < 18){
+				horario = 9
+				enquanto(horario < 17){
 					limpa()
 					escreva("Dinheiro: R$", dinheiro, "           Dia: ", dia,"           Horario: ", horario, "h\n\n")
 					sorteio_carro()
@@ -211,6 +211,12 @@ programa
 							caso 1:
 							dinheiro = dinheiro + 100
 							horario = horario + 3
+							dinheiro = dinheiro + 100
+							horario++
+							sorteio = u.sorteia(1, 10)
+							se(sorteio == 3){
+								erros_comuns++
+							}
 							loop = falso
 							pare
 	
@@ -219,7 +225,7 @@ programa
 							horario++
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
-								erros_raros++
+								erros_comuns++
 							}
 							loop = falso
 							pare
@@ -263,6 +269,10 @@ programa
 							caso 1:
 							dinheiro = dinheiro + 150
 							horario = horario + 3
+							sorteio = u.sorteia(1, 10)
+							se(sorteio == 3){
+								erros_raros++
+							}
 							loop = falso
 							pare
 	
@@ -283,7 +293,7 @@ programa
 
 							caso contrario:
 							escreva("Informe um comando valido ")
-							pare
+							retorne
 						}
 					}
 				}senao{
@@ -307,6 +317,10 @@ programa
 							caso 1:
 							dinheiro = dinheiro + 200
 							horario = horario + 3
+							sorteio = u.sorteia(1, 10)
+							se(sorteio == 3){
+								erros_ultra++
+							}
 							loop = falso
 							pare
 	
@@ -926,6 +940,7 @@ programa
 		}
 	}
 	funcao falencia(){
+		limpa()
 		escreva("                                                      ............ .                                                    \n")
 		escreva("                                             ...............................                                            \n")
 		escreva("                                        ..........................................                                      \n")
