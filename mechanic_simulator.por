@@ -9,7 +9,7 @@ programa
 	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0, horario = 0
 	cadeia cores [10] = {"preto", "branco", "cinza", "prata", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
-	cadeia frases_cliente[20] = {"Bom dia, meu carro está fazendo um barulho estranho. Pode dar uma olhada?", "Preciso de um serviço rápido, mas que resolva de vez. Confio no seu trabalho.", "Meu veículo está com dificuldade de ligar. É algo sério?", "Trouxe meu carro porque ouvi falar bem da sua oficina. Espero não me arrepender.", "Olha, não tenho o dia todo. Dá pra resolver isso rápido?", "Já fui em três oficinas e ninguém resolveu. Não me venha com desculpas.", "Se você não conseguir consertar, vou direto pro Procon.", "Quero um serviço barato e imediato. Sem enrolação.","Oi! É minha primeira vez aqui. Espero que você possa me ajudar.", "Não entendo nada de carro, mas ele tá fazendo um som meio... metálico?", "Desculpa incomodar, mas meu carro morreu no meio da rua. Pode ver pra mim?", "Você parece saber o que faz. Só não me cobre um rim, por favor!", "O motor está falhando na ignição. Acho que é a vela ou talvez o sensor de fase.", "Fiz uma análise com scanner e deu erro no módulo. Você trabalha com isso?", "Preciso trocar o fluido de freio e revisar a suspensão. Pode fazer hoje?", "O carro está puxando pra direita. Já verifiquei a calibragem, então deve ser alinhamento.", "Meu carro tá com mais tremedeira que minha sogra no frio. Socorro!", "Se você conseguir fazer esse carro andar, te pago um pastel e um caldo de cana.", "O rádio só toca música triste. Será que é o carro que tá deprimido?", "O carro tá fazendo um som tipo ‘clac-clac-clac’. Isso é normal ou ele tá virando um maracas?"}
+	cadeia frases_cliente[20] = {"Fala, mestre das ferramentas!", "E aí, doutor dos motores!", "Bom dia, chefe! Trouxe trabalho pra você.", "Salve, salve! Tem espaço pra mais um carro aí?", "Oi, tudo certo? Vim pedir socorro!", "Fala aí, parceiro! Meu carro tá pedindo ajuda.", "Bom dia! Trouxe um paciente pra você cuidar.", "E aí, campeão! Tá pronto pra mais um desafio?", "Oi, mecânico! Espero que você tenha dormido bem, porque esse carro não tá fácil.", "Fala, fera! Meu carro tá precisando de um milagre.", "Bom dia, rei da graxa!", "E aí, mestre! Trouxe uma bomba pra você desarmar.", "Oi! Vim ver se você consegue salvar meu carro hoje.", "Fala, chefe! Meu carro tá com sintomas estranhos.", "Bom dia! Trouxe um caso complicado pra você resolver.", "E aí, doutor! Meu carro tá doente de novo.", "Oi, tudo beleza? Vim trazer mais um desafio pra oficina.", "Fala, mecânico! Hoje é dia de missão impossível?", "Bom dia! Meu carro tá com crise existencial, ajuda ele aí.", "E aí, mestre dos parafusos! Tem solução pra mim hoje."}
 	cadeia frases_mecanico [14] = {"E aí, parceiro! O que tá pegando com o carro? Me diz o modelo pra eu já ir pensando no conserto.", "Trouxe o bicho pra dar um trato? Qual o modelo dele, só pra eu saber com quem tô lidando.", "Esse aí tá com cara de que aprontou... Qual o modelo e ano pra eu começar o diagnóstico.", "Vamos ver se esse possante ainda tem salvação! Que modelo é ele?", "Chegou mais um paciente! Qual o modelo do carro pra eu preparar os instrumentos?", "Se o carro tá fazendo barulho estranho, é comigo mesmo. Mas antes, que modelo é esse?", "Esse aí é valente ou vive na oficina? Me diz o modelo que eu descubro rapidinho.", "Pode deixar que eu cuido dele. Só preciso saber: qual o modelo e o ano?", "Vamos dar um trato nesse carrão! Mas antes, que modelo estamos falando?", "Se ele tá tossindo, eu sou o doutor. Qual o modelo pra eu receitar o remédio certo?", "Esse motor tá mais cansado que segunda-feira... Qual o modelo pra eu animar ele?", "Chegou na oficina certa! Agora me diz: que modelo é esse guerreiro?", "Se ele tá com febre, eu curo. Mas preciso saber o modelo pra aplicar o remédio certo.", "Esse aí já é freguês ou tá estreando aqui? Qual o modelo pra eu puxar a ficha dele."}
 	funcao inicio()
 	{
@@ -57,7 +57,7 @@ programa
 						escreva("Você teve um dia perfeito sem fazer cagadas em carros de clientes.\n")
 					}
 					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n")
-					dinheiro = dinheiro - 250*dia
+					dinheiro = dinheiro - 200*dia
 					escreva("aperte [enter] para proseguir ")
 					leia(continuar)
 					enquanto(continuar != ""){
@@ -212,7 +212,6 @@ programa
 							caso 1:
 							dinheiro = dinheiro + 100
 							horario = horario + 3
-							dinheiro = dinheiro + 100
 							horario++
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
@@ -351,8 +350,8 @@ programa
 	funcao camaro(){
           cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Camaro da cor ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Meu Camaro ", cores[u.sorteia(0, 9)], " tá gastando combustível demais, do nada.\n\n")
 
   		escreva("                                                        ....,,,,,***///((/((/(/(\n")
 		escreva("                                            .   ..... .(*,,,//**,*,,***,******//\n")
@@ -378,9 +377,8 @@ programa
 	funcao fiat_uno(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Fiat Uno ", cores[u.sorteia(0, 9)], "\n\n")
-
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Fiat uno ", cores[u.sorteia(0, 9)], " tá com um chiado que não sai nem com reza.\n\n")
 		escreva("********************************************************************************\n")
 		escreva("******************************************/*************************************\n")
 		escreva("***************************************/****************************************\n")
@@ -405,8 +403,8 @@ programa
 	funcao corolla(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Corolla ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Corolla ", cores[u.sorteia(0, 9)], " tá puxando pra esquerda sozinho.\n\n")
 
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -434,8 +432,8 @@ programa
 	funcao celta(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Celta ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ":Tenho um Celta ", cores[u.sorteia(0, 9)], ", começou a falhar do nada.\n\n")
 
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -459,8 +457,8 @@ programa
 	funcao civic(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Civic ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Tenho um Civic ", cores[u.sorteia(0, 9)], ", tá vazando algum líquido e não sei de onde.\n\n")
 	
 		escreva("                                     ./(#&&&&&&&&&&&&&(//                       \n")
 		escreva("                            ,,///*********,,,,,,,,,,,,*&#****//,%%              \n")
@@ -482,8 +480,8 @@ programa
 		funcao fiesta(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Fiesta ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Fiesta ", cores[u.sorteia(0, 9)], " o motor tá esquentando muito rápido.\n\n")
 	
 		escreva("            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@&&&&&&&@@@@@@@@@@@@@           \n")
 		escreva("            @@@@@@@@@@@@@@@@@@@@@@@,%&@@&&&%%##((((((/&#&&#&% (@@@@@@           \n")
@@ -507,8 +505,8 @@ programa
 	funcao gol(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Gol ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Gol ", cores[u.sorteia(0, 9)], ", tá fazendo uns barulhos estranhos quando acelero.\n\n")
 		
 		escreva("......                                                                ..........\n")
 		escreva("....                          .*##(/////////////#((%%%%%%&%%&#/,        ........\n")
@@ -532,8 +530,8 @@ programa
 	funcao ford_ka(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Ford Ka ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Tenho um Ford ka ", cores[u.sorteia(0, 9)], " tá vibrando demais quando passo dos 60.\n\n")
 
 		escreva("                                                                                \n")
 		escreva("                                         .     .....  .                         \n")
@@ -557,8 +555,8 @@ programa
 	funcao hb20(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Hb20 ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Meu HB20 ", cores[u.sorteia(0, 9)], " tá tremendo demais quando paro no sinal.\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@@@@@@@@@@@@@(&%%&&&&&&#/%####%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -584,8 +582,8 @@ programa
 	funcao Hilux(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Uma Hilux ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É uma Hilux ", cores[u.sorteia(0, 9)], " tem um chiado estranho quando acelero.\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -610,8 +608,8 @@ programa
 		funcao mustang(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Mustang ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Mustang ", cores[u.sorteia(0, 9)], " a embreagem tá alta demais, parece que tá escapando.\n\n")
 
 		escreva("                                                      ///////////////           \n")
 		escreva("                                **&#((((((///*///////*** .%%,*/    (#%%#        \n")
@@ -632,8 +630,8 @@ programa
 		funcao onix(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Onix ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Meu Onix ", cores[u.sorteia(0, 9)], " tá dando uns trancos quando troca de marcha.\n\n")
 
 		escreva("                                                       (                      \n")
 		escreva("                          .(&%#(///*****,,,,,,*/%%(......,...,#%##*           \n")
@@ -657,8 +655,8 @@ programa
 	funcao palio(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Palio ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Trouxe meu Palio ", cores[u.sorteia(0, 9)], ", o painel acendeu umas luzes esquisitas.\n\n")
 
 		escreva("                                            ./#%&%%#/.  (%%#%%#%                \n")
 		escreva("                                 #%##%&&@@&@@&%%(%(#(((((/((//##(/%#&/          \n")
@@ -684,8 +682,8 @@ programa
 	funcao porshe911(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Uma Porshe 911 ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É uma Porshe 911 ", cores[u.sorteia(0, 9)], " o velocímetro tá marcando tudo errado.\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&%%###(((((((((((((((##,  &#@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -715,8 +713,8 @@ programa
 		funcao ranger(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Uma Ranger ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ":  É um  Ranger ", cores[u.sorteia(0, 9)], " o freio tá meio mole, demora pra responder.\n\n")
 
 		escreva("@@@@@@@&&&&&&%%%%%%%%%%%&&&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@&&&&&&%%%%%%%%%%%&&&&&&&&&&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -743,8 +741,8 @@ programa
 	funcao sandeiro(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Sandeiro ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Sandero ", cores[u.sorteia(0, 9)], " o ar-condicionado parou de funcionar do nada.\n\n")
 
 		escreva(".                                ...&*,*/(#%%%##((/*(.    .  .                                   \n")
 		escreva("                           .*.,,*/(##%%%%%&&&&&&&&&&&&&&%%&&, %*,,@.,,,&#                                \n")
@@ -771,8 +769,8 @@ programa
 	funcao fox(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Fox ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Fox ", cores[u.sorteia(0, 9)], " a direção tá dura, parece que travou.\n\n")
 
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n")
@@ -798,8 +796,8 @@ programa
 	funcao voyage(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Voyage ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Meu Voyage ", cores[u.sorteia(0, 9)], " tá com um rangido toda vez que passo em lombada.\n\n")
 
 		escreva("                                *((((####%%&&#######%##%%%%                     \n")
 		escreva("                           //((((###&&##&&%%*(/((((##******&%(/                 \n")
@@ -817,8 +815,8 @@ programa
 	funcao compass(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Uma Compass ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Tenho um Compass ", cores[u.sorteia(0, 9)], " tá morrendo sozinho no trânsito.\n\n")
 
 		escreva("                                             ........      /                    \n")
 		escreva("                               *((#%%&&&@@&#(##%%%%%%#.,,###%###/,*,.           \n")
@@ -843,8 +841,8 @@ programa
 	funcao fit(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Honda Fit ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": É um Fit ", cores[u.sorteia(0, 9)], " tá com dificuldade pra subir ladeira.\n\n")
 		
 		escreva("                                 .. ..    ..    ..  (....,@%(%&*....            \n")
 		escreva("                           &,,,*....((((((((((###..%*##////#######(%##..        \n")
@@ -870,8 +868,8 @@ programa
 	funcao siena(){
 		cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
 		escreva(Nome_cliente, ": ", frases_cliente[u.sorteia(0, 19)], "\n")
-		escreva(nome_mecanico, ": Ola, qual seria o seu carro?\n")
-		escreva(Nome_cliente, ": Um Siena ", cores[u.sorteia(0, 9)], "\n\n")
+		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
+		escreva(Nome_cliente, ": Tenho um Siena ", cores[u.sorteia(0, 9)], " tá fazendo um barulho metálico lá atrás.\n\n")
 		
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&,**..    ..****/(&@@@@@@@@@@@@@@@@@@@\n")
 		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   .**      *     *@@@@@@@@@@@@\n")
