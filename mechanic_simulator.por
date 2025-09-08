@@ -6,7 +6,8 @@ programa
 	cadeia carros_boss[2] = {"Marea", "Peugeot 206"}
 	cadeia nome_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina, continuar
-	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0, horario = 0
+	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0
+	real horario = 0.0
 	cadeia cores [10] = {"preto", "branco", "cinza", "prata", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	cadeia frases_cliente[20] = {"Fala, mestre das ferramentas!", "E aí, doutor dos motores!", "Bom dia, chefe! Trouxe trabalho pra você.", "Salve, salve! Tem espaço pra mais um carro aí?", "Oi, tudo certo? Vim pedir socorro!", "Fala aí, parceiro! Meu carro tá pedindo ajuda.", "Bom dia! Trouxe um paciente pra você cuidar.", "E aí, campeão! Tá pronto pra mais um desafio?", "Oi, mecânico! Espero que você tenha dormido bem, porque esse carro não tá fácil.", "Fala, fera! Meu carro tá precisando de um milagre.", "Bom dia, rei da graxa!", "E aí, mestre! Trouxe uma bomba pra você desarmar.", "Oi! Vim ver se você consegue salvar meu carro hoje.", "Fala, chefe! Meu carro tá com sintomas estranhos.", "Bom dia! Trouxe um caso complicado pra você resolver.", "E aí, doutor! Meu carro tá doente de novo.", "Oi, tudo beleza? Vim trazer mais um desafio pra oficina.", "Fala, mecânico! Hoje é dia de missão impossível?", "Bom dia! Meu carro tá com crise existencial, ajuda ele aí.", "E aí, mestre dos parafusos! Tem solução pra mim hoje."}
@@ -47,8 +48,8 @@ programa
 				se(dia != 1){
 					limpa()
 					se(erros_comuns + erros_evento + erros_raros + erros_ultra != 0){
-						dinheiro = dinheiro - erros_comuns*200 - erros_evento*700 - erros_raros*300 - erros_ultra*400
-						escreva("Voce cometeu ", erros_comuns + erros_evento + erros_raros + erros_ultra, " erros e teve um prejuízo de R$ ", erros_comuns*200 + erros_evento*700 + erros_raros*300 + erros_ultra*400, " por serviços mal feitos e por compensação à clientes insaitisfeitos.\n")
+						dinheiro = dinheiro - erros_comuns*400 - erros_evento*1000 - erros_raros*600 - erros_ultra*800
+						escreva("Voce cometeu ", erros_comuns + erros_evento + erros_raros + erros_ultra, " erros e teve um prejuízo de R$ ", erros_comuns*400 + erros_evento*1000 + erros_raros*600 + erros_ultra*800, " por serviços mal feitos e por compensação à clientes insaitisfeitos.\n")
 						erros_comuns = 0
 						erros_evento = 0
 						erros_raros = 0
@@ -57,7 +58,7 @@ programa
 						escreva("Você teve um dia perfeito sem fazer cagadas em carros de clientes.\n")
 					}
 					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n")
-					dinheiro = dinheiro - 200*dia
+					dinheiro = dinheiro - 300*dia
 					escreva("aperte [enter] para proseguir ")
 					leia(continuar)
 					enquanto(continuar != ""){
@@ -66,8 +67,8 @@ programa
 			}
 			limpa()
 				}
-				horario = 9
-				enquanto(horario < 17){
+				horario = 8
+				enquanto(horario < 18){
 					limpa()
 					escreva("Dinheiro: R$", dinheiro, "           Dia: ", dia,"           Horario: ", horario, "h\n\n")
 					sorteio_carro()
@@ -210,9 +211,8 @@ programa
 						leia(escolhas)
 						escolha(escolhas){
 							caso 1:
-							dinheiro = dinheiro + 100
+							dinheiro = dinheiro + 200
 							horario = horario + 3
-							horario++
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
 								erros_comuns++
@@ -221,8 +221,8 @@ programa
 							pare
 	
 							caso 2:
-							dinheiro = dinheiro + 100
-							horario++
+							dinheiro = dinheiro + 200
+							horario = horario + 1.5
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
 								erros_comuns++
@@ -240,7 +240,7 @@ programa
 							pare
 						}
 					}
-			}senao se(sorteio <= 99){
+			}senao se(sorteio <= 95){
 					sorteio = u.sorteia(1, 5)
 					escolha(sorteio){
 						caso 1:
@@ -267,7 +267,7 @@ programa
 						leia(escolhas)
 						escolha(escolhas){
 							caso 1:
-							dinheiro = dinheiro + 150
+							dinheiro = dinheiro + 300
 							horario = horario + 3
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
@@ -277,8 +277,8 @@ programa
 							pare
 	
 							caso 2:
-							dinheiro = dinheiro + 150
-							horario++
+							dinheiro = dinheiro + 300
+							horario = horario + 1.5
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
 								erros_raros++
@@ -315,7 +315,7 @@ programa
 						leia(escolhas)
 						escolha(escolhas){
 							caso 1:
-							dinheiro = dinheiro + 200
+							dinheiro = dinheiro + 400
 							horario = horario + 3
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
@@ -325,8 +325,8 @@ programa
 							pare
 	
 							caso 2:
-							dinheiro = dinheiro + 200
-							horario++
+							dinheiro = dinheiro + 400
+							horario = horario + 1.5
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
 								erros_ultra++
@@ -346,6 +346,29 @@ programa
 					}
 				}
 			}	
+	}
+	funcao batalha_boss(){
+		escreva("Use cola quente para vedar o cabeçote.\n\n")
+		escreva("Retificar o bloco, trocar bielas, pistões e o vira-brequim.\n\n")
+		escreva("Instale um difusor de ar no escapamento antes de desmontar o cabeçote.\n\n")
+		escreva("Remover pistões e bielas pelos cilindros, separar e identificar cada conjunto.\n\n")
+		escreva("Verificar se o rádio ainda funciona.\n\n")
+		escreva("Montar tudo de volta na ordem inversa: vira-brequim → pistões → bomba de óleo → cárter → cabeçote → periféricos → motor no carro.\n\n")
+		escreva("Soltar bomba de óleo.\n\n")
+		escreva("Coloque um amuleto dentro do cárter para afastar vibrações negativas.\n\n")
+		escreva("Desconectar bateria, chicote elétrico, mangueiras e suportes para remover o motor.\n\n")
+		escreva("Testar o motor com um cabo de vassoura no lugar do virabrequim.\n\n")
+		escreva("Tirar o cabeçote: tampa de válvulas, comandos, coletor de admissão e escape.\n\n")
+		escreva("Pinte os pistões com esmalte metálico para melhorar a aerodinâmica interna.\n\n")
+		escreva("Remover o cárter virando o motor de cabeça pra baixo e tirando todos os parafusos.\n\n")
+		escreva("Reinstalar o motor com os parafusos trocados de lugar.\n\n")
+		escreva("Remover periféricos: alternador, compressor do ar-condicionado, bomba d’água, correia dentada/corrente.\n\n")
+		escreva("Instalar um ventilador de mesa no compartimento do motor.\n\n")
+		escreva("Tirar capas de mancais e bielas, verificar folgas, trincas e marcas no eixo.\n\n")
+		escreva("Troque o óleo por suco de laranja para “limpeza natural”.\n\n")
+		escreva("Coloque o motor no porta-malas para “descanso térmico”.\n\n")
+		escreva("Grite “FORÇA, MOTOR!” antes de ligar o carro.\n\n")
+
 	}
 	funcao camaro(){
           cadeia Nome_cliente = nome_clientes[u.sorteia(0, 19)]
@@ -921,13 +944,13 @@ programa
 		escreva("////////////****************,,,*,*,*,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************///////////\n")
 		escreva("/////////////******************,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,****************////////////\n\n")
 
-		escreva("[1] Aceitar o desafio (+R$ 400 , +risco de falha) \n")
+		escreva("[1] Aceitar o desafio (+R$ 600 , +risco de falha) \n")
 		escreva("[2] Recusar (Sem bônus, sem risco)\n")
 		leia(escolhas)
     
     		escolha(escolhas){
     			caso 1:
-    			dinheiro = dinheiro + 400
+    			dinheiro = dinheiro + 600
     			se(u.sorteia(1, 3) == 3){
     				erros_evento++
     			}
