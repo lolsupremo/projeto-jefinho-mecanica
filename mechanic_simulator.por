@@ -37,8 +37,19 @@ programa
 
 		escolha(escolhas){
 			caso 1: 
+			limpa()
+			escreva("informe o nome do mecânico\n")
+			leia(nome_mecanico)
+			escreva("informe o nome da oficina mecânica\n")
+			leia(nome_oficina)
+			limpa()
 			
 			introducao()
+
+			se(nome_mecanico == "Rodrigo Chave Inglesa"){
+				dinheiro = 99999
+				dia = 5
+			}
 			
 			limpa()
 
@@ -84,11 +95,6 @@ programa
 	funcao introducao(){
 		limpa()
 			
-			escreva("informe o nome do mecânico\n")
-			leia(nome_mecanico)
-			escreva("informe o nome da oficina mecânica\n")
-			leia(nome_oficina)
-			limpa()
 			
 			
 			//introduçao
@@ -351,8 +357,10 @@ programa
 		inteiro ordem = 0, erros_boss = 0
 		cadeia passos[20]
 		inteiro sorteio
+
 		
-		
+		limpa()
+		escreva("Dinheiro: R$", dinheiro, "           Dia: ", dia,"\n\n")
 		escreva("Rodrigo Chave Inglesa: Como voce sendo meu melhor cliente preciso de provas que voce eh um bom mecanico aceite o meu desafio (Voce sente que voce nao pode recusar esse desafio)\n\n")
 		
 		sorteio = u.sorteia(0, 1)
@@ -439,7 +447,7 @@ programa
 		}
 		limpa()
 		escreva("apos concerta o ",carros_boss[sorteio] , ", voce foi dar partida e ...\n\n")
-		u.aguarde(20000)
+		u.aguarde(10000)
 		se(erros_boss != 0){
 			
 			explosao()
