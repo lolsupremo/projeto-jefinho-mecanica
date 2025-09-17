@@ -7,7 +7,7 @@ programa
 	cadeia nome_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina, continuar
 	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0
-	real horario = 0.0
+	real horario = 0.0, bonus = 1.0
 	cadeia cores [10] = {"preto", "branco", "cinza", "prata", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	cadeia frases_cliente[20] = {"Fala, mestre das ferramentas!", "E aí, doutor dos motores!", "Bom dia, chefe! Trouxe trabalho pra você.", "Salve, salve! Tem espaço pra mais um carro aí?", "Oi, tudo certo? Vim pedir socorro!", "Fala aí, parceiro! Meu carro tá pedindo ajuda.", "Bom dia! Trouxe um paciente pra você cuidar.", "E aí, campeão! Tá pronto pra mais um desafio?", "Oi, mecânico! Espero que você tenha dormido bem, porque esse carro não tá fácil.", "Fala, fera! Meu carro tá precisando de um milagre.", "Bom dia, rei da graxa!", "E aí, mestre! Trouxe uma bomba pra você desarmar.", "Oi! Vim ver se você consegue salvar meu carro hoje.", "Fala, chefe! Meu carro tá com sintomas estranhos.", "Bom dia! Trouxe um caso complicado pra você resolver.", "E aí, doutor! Meu carro tá doente de novo.", "Oi, tudo beleza? Vim trazer mais um desafio pra oficina.", "Fala, mecânico! Hoje é dia de missão impossível?", "Bom dia! Meu carro tá com crise existencial, ajuda ele aí.", "E aí, mestre dos parafusos! Tem solução pra mim hoje."}
@@ -154,7 +154,7 @@ programa
 		logico loop = verdadeiro
 		inteiro sorteio = u.sorteia(1, 30)
 		se(sorteio == 30){
-			se(u.sorteia(1, 2){
+			se(u.sorteia(1, 2) == 1){
 				evento_especial_corrida()
 			} senao {
 				evento_especial_neymar()
@@ -1323,6 +1323,54 @@ programa
     			caso 2:
 			horario++
 			pare
+		
+		}
+	}
+	funcao loja(){
+		
+		cadeia itens[4] = {"Makita", "Pneumatica", "kit ferramentas tramontina", "Parafusadeira profissional"}
+		escreva("----------------------------------------------------------------------------------------------\n")
+		escreva("(                                                     (                              \n")
+		escreva(" )\\ )       (                          (               )\\ )                           \n")
+		escreva("(()/(       )\\ )  (   (   (  (         )\\ )    )      (()/(   (   (    (       )      \n")
+		escreva(" /(_)) (   (()/(  )(  )\\  )\\))(  (    (()/( ( /(  (    /(_)) ))\\  )(   )(   ( /(  (   \n")
+		escreva("(_))   )\\   ((_))(()\\((_)((_))\\  )\\    ((_)))(_)) )\\  (_))_|/((_)(()\\ (()\\  )(_)) )\\  \n")
+		escreva("| _ \\ ((_)  _| |  ((_)(_) (()(_)((_)   _| |((_)_ ((_) | |_ (_))   ((_) ((_)((_)_ ((_) \n")
+		escreva("|   // _ \\/ _` | | '_|| |/ _` |/ _ \\ / _` |/ _` |(_-< | __|/ -_) | '_|| '_|/ _` |(_-< \n")
+		escreva("|_|_\\\\___/\\__,_| |_|  |_|\\__, |\\___/ \\__,_|\\__,_|/__/ |_|  \\___| |_|  |_|  \\__,_|/__/ \n")
+		escreva("                         |___/                                                        \n")
+		escreva("----------------------------------------------------------------------------------------------\n\n")
+
+		escreva("Rodrigo Chave Inglesa: Bem-vindo a minha loja. Eu tenho ferramentas que pode ajudar na sua mecanica, mas voce so pode escolher uma por dia.\n\n")
+
+		escreva("[1] R$400 ", itens[0], "        [2] R$250 ", itens [1], "       [3] R$300 ", itens[2], "       [4] R$200 ", itens[3])
+		leia(escolhas)
+
+		escolha(escolhas){
+			caso 1:
+			itens[0] = "Item esgotado"
+			bonus = bonus + 0.2
+			dinheiro = dinheiro - 400
+			pare
+
+			caso 2:
+			itens[1] = "Item esgotado"
+			bonus = bonus + 0.1
+			dinheiro = dinheiro - 250
+			pare
+
+			caso 3:
+			itens[2] = "Item esgotado"
+			bonus = bonus + 0.15
+			dinheiro = dinheiro - 300
+			pare
+
+			caso 4:
+			itens[3] = "Item esgotado"
+			bonus = bonus + 0.1
+			dinheiro = dinheiro - 200
+			pare
+		}
 		
 	}
 }
