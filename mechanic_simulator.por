@@ -1397,4 +1397,40 @@ programa
 		}
 		
 	}
+		funcao penalti(){
+		cadeia penaltis
+		cadeia lado
+		inteiro ponto = 0
+			escreva ("Voce foi ate a Vila Belmiro(estadio do santos) para o desafio de penaltis contra o neymay\n")
+			escreva("Como jogar: Voce tem que escolher um lado para bater o penalti, se acertar, +1 ponto e se errar nao ganha nada. Voce bate o penalti 5 vezes e vai para o gol tentar defender o penalti do neymar e nao deixar ele fazer ponto.\n")
+			escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+			lado = "esquerdo"
+			leia(penaltis)
+
+			se(lado == penaltis){
+				escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto")
+			} senao {
+				escreva("Voce chutou para o lado direito, mas para o seu azar o goleiro defendeu. Voce tem 0 pontos")
+			}
+
+			escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+			lado = "esquerdo"
+			leia(penaltis)
+
+			se(lado == penaltis){
+				escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto")
+			} senao {
+				escreva("Voce chutou para o lado direito, mas para o seu azar o goleiro defendeu. Voce tem ", ponto, " ")
+			}
+			escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+			lado = "direito"
+			leia(penaltis)
+
+			se(lado == penaltis){
+				escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto")
+			} senao {
+				escreva("Voce chutou para o lado esquerdo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ")
+			}
+		}
+
 }
