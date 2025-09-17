@@ -12,9 +12,10 @@ programa
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	cadeia frases_cliente[20] = {"Fala, mestre das ferramentas!", "E aí, doutor dos motores!", "Bom dia, chefe! Trouxe trabalho pra você.", "Salve, salve! Tem espaço pra mais um carro aí?", "Oi, tudo certo? Vim pedir socorro!", "Fala aí, parceiro! Meu carro tá pedindo ajuda.", "Bom dia! Trouxe um paciente pra você cuidar.", "E aí, campeão! Tá pronto pra mais um desafio?", "Oi, mecânico! Espero que você tenha dormido bem, porque esse carro não tá fácil.", "Fala, fera! Meu carro tá precisando de um milagre.", "Bom dia, rei da graxa!", "E aí, mestre! Trouxe uma bomba pra você desarmar.", "Oi! Vim ver se você consegue salvar meu carro hoje.", "Fala, chefe! Meu carro tá com sintomas estranhos.", "Bom dia! Trouxe um caso complicado pra você resolver.", "E aí, doutor! Meu carro tá doente de novo.", "Oi, tudo beleza? Vim trazer mais um desafio pra oficina.", "Fala, mecânico! Hoje é dia de missão impossível?", "Bom dia! Meu carro tá com crise existencial, ajuda ele aí.", "E aí, mestre dos parafusos! Tem solução pra mim hoje."}
 	cadeia frases_mecanico [14] = {"E aí, parceiro! O que tá pegando com o carro? Me diz o modelo pra eu já ir pensando no conserto.", "Trouxe o bicho pra dar um trato? Qual o modelo dele, só pra eu saber com quem tô lidando.", "Esse aí tá com cara de que aprontou... Qual o modelo e ano pra eu começar o diagnóstico.", "Vamos ver se esse possante ainda tem salvação! Que modelo é ele?", "Chegou mais um paciente! Qual o modelo do carro pra eu preparar os instrumentos?", "Se o carro tá fazendo barulho estranho, é comigo mesmo. Mas antes, que modelo é esse?", "Esse aí é valente ou vive na oficina? Me diz o modelo que eu descubro rapidinho.", "Pode deixar que eu cuido dele. Só preciso saber: qual o modelo e o ano?", "Vamos dar um trato nesse carrão! Mas antes, que modelo estamos falando?", "Se ele tá tossindo, eu sou o doutor. Qual o modelo pra eu receitar o remédio certo?", "Esse motor tá mais cansado que segunda-feira... Qual o modelo pra eu animar ele?", "Chegou na oficina certa! Agora me diz: que modelo é esse guerreiro?", "Se ele tá com febre, eu curo. Mas preciso saber o modelo pra aplicar o remédio certo.", "Esse aí já é freguês ou tá estreando aqui? Qual o modelo pra eu puxar a ficha dele."}
+	cadeia itens[4] = {"R$400 Makita", "R$250 Pneumatica", "R$300 kit ferramentas tramontina", "R$200 Parafusadeira profissional"}
+	
 	funcao inicio()
 	{
-		inteiro dinheiro_inicio_dia_anterior = 0
 		
 		escreva("*                    )             )  (              (    (       *            (                         )   (     \n")
 		escreva(" (  `           (    ( /(   (      ( /(  )\\ )   (       )\\ ) )\\ )  (  `           )\\ )    (       *   )  ( /(   )\\ )  \n")
@@ -57,6 +58,7 @@ programa
 
 			enquanto(dia < 5){
 				se(dia != 1){
+					
 					limpa()
 					se(erros_comuns + erros_evento + erros_raros + erros_ultra != 0){
 						dinheiro = dinheiro - erros_comuns*400 - erros_evento*1000 - erros_raros*600 - erros_ultra*800
@@ -88,6 +90,9 @@ programa
 				se(dinheiro <= 0){
 					falencia()
 				}
+				limpa()
+				escreva("Dinheiro: R$", dinheiro, "\n\n")
+				loja()
 			}
 			batalha_boss()	
 		}
@@ -1348,7 +1353,6 @@ programa
 	}
 	funcao loja(){
 		
-		cadeia itens[4] = {"Makita", "Pneumatica", "kit ferramentas tramontina", "Parafusadeira profissional"}
 		escreva("----------------------------------------------------------------------------------------------\n")
 		escreva("(                                                     (                              \n")
 		escreva(" )\\ )       (                          (               )\\ )                           \n")
@@ -1363,7 +1367,7 @@ programa
 
 		escreva("Rodrigo Chave Inglesa: Bem-vindo a minha loja. Eu tenho ferramentas que pode ajudar na sua mecanica, mas voce so pode escolher uma por dia.\n\n")
 
-		escreva("[1] R$400 ", itens[0], "        [2] R$250 ", itens [1], "       [3] R$300 ", itens[2], "       [4] R$200 ", itens[3], "\n")
+		escreva("[1] ", itens[0], "        [2] ", itens [1], "       [3] ", itens[2], "       [4] ", itens[3], "\n")
 		leia(escolhas)
 
 		escolha(escolhas){
