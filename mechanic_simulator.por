@@ -1432,5 +1432,64 @@ programa
 				escreva("Voce chutou para o lado esquerdo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ")
 			}
 		}
+	funcao dia_1(){
+		escreva(" ______________________________________________________ \n")
+		escreva("|                 (                                    | \n")
+		escreva("|                  )\\ )                )               | \n")
+		escreva("|                 (()/(  (      )   ( /(               |\n")
+		escreva("|                 /(_)) )\\  ( /(   )\\())              |\n")
+		escreva("|                 (_))_ ((_) )(_)) ((_)\\               | \n")
+		escreva("|                  |   \\ (_)((_)_   / (_)              |\n")
+		escreva("|                  | |) || |/ _` |  | |                |\n")
+		escreva("|                  |___/ |_|\\__,_|  |_|                |\n")
+		escreva("|                                                      |\n")
+		escreva("|     Voce começa sua jornada na mecanica animado      |\n")
+		escreva("|______________________________________________________|\n")
+
+	}
+	funcao dia_2(){
+		escreva(" ______________________________________________________ \n")
+		escreva("|                 (                                    | \n")
+		escreva("|                  )\\ )                )              | \n")
+		escreva("|                 (()/(  (      )   ( /(               |\n")
+		escreva("|                  /(_)) )\\  ( /(   )(_))             |\n")
+		escreva("|                 (_))_ ((_) )(_)) ((_)                | \n")
+		escreva("|                  |   \\ (_)((_)_  |_  )              |\n")
+		escreva("|                  | |) || |/ _` |  / /                |\n")
+		escreva("|                  |___/ |_|\\__,_| /___|              |\n")
+		escreva("|                                                      |\n")
+		escreva("|    Voce continua animado e ve que consegue lucrar    |\n")
+		escreva("|______________________________________________________|\n")
+	}
+	funcao dia_3(){
+		escreva(" ______________________________________________________ \n")
+		escreva("|                 (                                    | \n")
+		escreva("|                  )\\ )                 )              | \n")
+		escreva("|                 (()/(  (      )    ( /(              |\n")
+		escreva("|                  /(_)) )\\  ( /(    )\\())             |\n")
+		escreva("|                 (_))_ ((_) )(_))  ((_)\\              | \n")
+		escreva("|                  |   \\ (_)((_)_  |__ (_)             |\n")
+		escreva("|                  | |) || |/ _` |  |_ \\               |\n")
+		escreva("|                  |___/ |_|\\__,_| |___/              |\n")
+		escreva("|                                                      |\n")
+		escreva("|       Voce percebe que esta começando a errar,       |\n")
+		escreva("|     mas sabe que o negocio continua dando certo      |\n")
+		escreva("|______________________________________________________|\n")
+	}
+	funcao dia_4(){
+		escreva(" ______________________________________________________ \n")
+		escreva("|                 (                                    | \n")
+		escreva("|                  )\\ )                 )              | \n")
+		escreva("|                 (()/(  (      )    ( /(              |\n")
+		escreva("|                  /(_)) )\\  ( /(    )\\())             |\n")
+		escreva("|                 (_))_ ((_) )(_))  ((_)\\              | \n")
+		escreva("|                  |   \\ (_)((_)_  | | (_)             |\n")
+		escreva("|                  | |) || |/ _` | |_  _|              |\n")
+		escreva("|                  |___/ |_|\\__,_|   |_|               |\n")
+		escreva("|                                                      |\n")
+		escreva("|       Voce percebe que esta começando a errar,       |\n")
+		escreva("|     mas sabe que o negocio continua dando certo      |\n")
+		escreva("|______________________________________________________|\n")
+	}
 
 }
