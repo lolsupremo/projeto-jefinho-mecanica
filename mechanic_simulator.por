@@ -1363,7 +1363,7 @@ programa
 
 		escreva("Rodrigo Chave Inglesa: Bem-vindo a minha loja. Eu tenho ferramentas que pode ajudar na sua mecanica, mas voce so pode escolher uma por dia.\n\n")
 
-		escreva("[1] R$400 ", itens[0], "        [2] R$250 ", itens [1], "       [3] R$300 ", itens[2], "       [4] R$200 ", itens[3])
+		escreva("[1] R$400 ", itens[0], "        [2] R$250 ", itens [1], "       [3] R$300 ", itens[2], "       [4] R$200 ", itens[3], "\n")
 		leia(escolhas)
 
 		escolha(escolhas){
