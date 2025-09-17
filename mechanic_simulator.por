@@ -154,7 +154,11 @@ programa
 		logico loop = verdadeiro
 		inteiro sorteio = u.sorteia(1, 30)
 		se(sorteio == 30){
-			evento_especial()
+			se(u.sorteia(1, 2){
+				evento_especial_corrida()
+			} senao {
+				evento_especial_neymar()
+			}
 		} senao {
 			sorteio = u.sorteia(1, 100)
 			se(sorteio <= 80){
