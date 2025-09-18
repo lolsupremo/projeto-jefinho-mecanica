@@ -6,8 +6,8 @@ programa
 	cadeia carros_boss[2] = {"Marea", "Peugeot 206"}
 	cadeia nome_clientes[20] = {"Maria", "José", "Ana", "João", "Antônio", "Francisca", "Carlos", "Paula", "Pedro", "Lucia", "Luiz", "Adriana", "Francisco", "Juliana", "Marcos", "Patrícia", "Fernando", "Aline", "Ricardo", "Sandra"}
 	cadeia nome_mecanico, nome_oficina, continuar
-	inteiro dinheiro = 1000, escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0
-	real horario = 0.0, bonus = 1.0
+	inteiro escolhas, dia = 1, erros_comuns = 0, erros_raros = 0, erros_ultra = 0, erros_evento = 0
+	real horario = 0.0, bonus = 1.0, dinheiro = 1000.0
 	cadeia cores [10] = {"preto", "branco", "cinza", "prata", "vermelho", "rosa", "azul", "vermelho carmesim", "azul marinho", "verde palmeiras"}
 	cadeia dias[5] = {"Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira"}
 	cadeia frases_cliente[20] = {"Fala, mestre das ferramentas!", "E aí, doutor dos motores!", "Bom dia, chefe! Trouxe trabalho pra você.", "Salve, salve! Tem espaço pra mais um carro aí?", "Oi, tudo certo? Vim pedir socorro!", "Fala aí, parceiro! Meu carro tá pedindo ajuda.", "Bom dia! Trouxe um paciente pra você cuidar.", "E aí, campeão! Tá pronto pra mais um desafio?", "Oi, mecânico! Espero que você tenha dormido bem, porque esse carro não tá fácil.", "Fala, fera! Meu carro tá precisando de um milagre.", "Bom dia, rei da graxa!", "E aí, mestre! Trouxe uma bomba pra você desarmar.", "Oi! Vim ver se você consegue salvar meu carro hoje.", "Fala, chefe! Meu carro tá com sintomas estranhos.", "Bom dia! Trouxe um caso complicado pra você resolver.", "E aí, doutor! Meu carro tá doente de novo.", "Oi, tudo beleza? Vim trazer mais um desafio pra oficina.", "Fala, mecânico! Hoje é dia de missão impossível?", "Bom dia! Meu carro tá com crise existencial, ajuda ele aí.", "E aí, mestre dos parafusos! Tem solução pra mim hoje."}
@@ -48,7 +48,7 @@ programa
 			introducao()
 
 			se(nome_mecanico == "Rodrigo Chave Inglesa"){
-				dinheiro = 99999
+				dinheiro = 99999.9
 				dia = 5
 			}
 			
@@ -57,8 +57,16 @@ programa
 			tutorial_boss()
 
 			enquanto(dia < 5){
-				se(dia != 1){
-					
+				se(dia == 1){
+					limpa()
+					dia_1()
+					escreva("aperte [enter] para proseguir ")
+					leia(continuar)
+					enquanto(continuar != ""){
+						escreva("\ntecla presionada errada aperte [enter] ")
+						leia(continuar) 
+					}
+				} senao {
 					limpa()
 					se(erros_comuns + erros_evento + erros_raros + erros_ultra != 0){
 						dinheiro = dinheiro - erros_comuns*400 - erros_evento*1000 - erros_raros*600 - erros_ultra*800
@@ -70,8 +78,15 @@ programa
 					}senao{
 						escreva("Você teve um dia perfeito sem fazer cagadas em carros de clientes.\n")
 					}
-					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n")
+					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n\n")
 					dinheiro = dinheiro - 300*dia
+					se(dia == 2){
+						dia_2()
+					} senao se(dia == 3){
+						dia_3()
+					} senao {
+						dia_4()
+					}
 					escreva("aperte [enter] para proseguir ")
 					leia(continuar)
 					enquanto(continuar != ""){
@@ -94,6 +109,14 @@ programa
 				escreva("Dinheiro: R$", dinheiro, "\n\n")
 				loja()
 			}
+			limpa()
+			dia_5()
+			escreva("aperte [enter] para proseguir ")
+					leia(continuar)
+					enquanto(continuar != ""){
+						escreva("\ntecla presionada errada aperte [enter] ")
+						leia(continuar) 
+					}
 			batalha_boss()	
 		}
 	}
@@ -225,7 +248,7 @@ programa
 						leia(escolhas)
 						escolha(escolhas){
 							caso 1:
-							dinheiro = dinheiro + 200
+							dinheiro = dinheiro + 200 * bonus
 							horario = horario + 3
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
@@ -235,7 +258,7 @@ programa
 							pare
 	
 							caso 2:
-							dinheiro = dinheiro + 200
+							dinheiro = dinheiro + 200 * bonus
 							horario = horario + 1.5
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
@@ -281,7 +304,7 @@ programa
 						leia(escolhas)
 						escolha(escolhas){
 							caso 1:
-							dinheiro = dinheiro + 300
+							dinheiro = dinheiro + 300 * bonus
 							horario = horario + 3
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
@@ -291,7 +314,7 @@ programa
 							pare
 	
 							caso 2:
-							dinheiro = dinheiro + 300
+							dinheiro = dinheiro + 300 * bonus 
 							horario = horario + 1.5
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
@@ -329,7 +352,7 @@ programa
 						leia(escolhas)
 						escolha(escolhas){
 							caso 1:
-							dinheiro = dinheiro + 400
+							dinheiro = dinheiro + 400 * bonus
 							horario = horario + 3
 							sorteio = u.sorteia(1, 10)
 							se(sorteio == 3){
@@ -339,7 +362,7 @@ programa
 							pare
 	
 							caso 2:
-							dinheiro = dinheiro + 400
+							dinheiro = dinheiro + 400 * bonus
 							horario = horario + 1.5
 							sorteio = u.sorteia(1, 3)
 							se(sorteio == 3){
@@ -993,12 +1016,12 @@ programa
 		escreva(nome_mecanico, ": ", frases_mecanico[u.sorteia(0, 13)], "\n")
 		escreva(Nome_cliente, ": Tenho um Siena ", cores[u.sorteia(0, 9)], " tá fazendo um barulho metálico lá atrás.\n\n")
 		
-		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&,**..    ..****/(&@@@@@@@@@@@@@@@@@@@\n")
-		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   .**      *     *@@@@@@@@@@@@\n")
-		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@ ..                  .*,.       ., .... /(@@@@@@@@@\n")
-		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@ .. . ........., ......***..,%&@@#..,,......,*/@@@@@@@\n")
-		escreva("@@@@@@@@@@@@@@@@%###(((((((///////************,*****  ,,,,,....,...,,*****//(@@@\n")
-		escreva("@@@@@@@@@@(/**********************.****,,*******,,,*********,..**,*,,,..,*****@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&,**..    ..****/(&@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                   .**      *     *@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@@@ ..                  .*,.       ., .... /(@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@@@@@@@@@@ .. . ........., ......***..,%&@@#..,,......,*/@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@@@@%###(((((((///////************,*****  ,,,,,....,...,,*****//(@@@@\n")
+		escreva("@@@@@@@@@@(/**********************.****,,*******,,,*********,..**,*,,,..,*****@@@\n")
 		escreva("@@@@@@@@@,,*/(##%##(*,,,,,.. .. .....,**,,,******,,,,,,,,,,,,,,,,,,,,,,,,**%,,*@@\n")
 		escreva("@@@@@@@@,   . /@...,**%,,.   .,,,,,..,,,*,*,     ,*....,,,,,,,,,,,,,,,,,,   #,,%@\n")
 		escreva("@@@@@@@%.,%%%%%%%%#,,,,,,,,,,,,.,.,...,,,.  .     .,..............**/,,.  . ..,@@\n")
@@ -1007,7 +1030,7 @@ programa
 		escreva("@@@@@@@&,,    ...  ..,(,,,,,,,...,/,... . , ,..., .../(///((((((####%    ., &@@@@\n")
 		escreva("@@@@@@@@@@@@&         #*...............   ,... ./ .........,,,,,**,,,...*%%&&@@@@\n")
 		escreva("@@@@@@@@@&%%#(*..  ..................      .  .  ,,,****//(((##%%%%&&&&@@@@@@@@@@\n")
-		escreva("@@@@@@@@@@@@@&&&%%%###((///***,,,,.....        ####%%%&&&&@@@@@@@@@@@@@@@@@@@@@@@@\n")
+		escreva("@@@@@@@@@@@@@&&&%%%###((///***,,,,.....        ####%%%&&&&@@@@@@@@@@@@@@@@@@@@@@@\n\n")
    	
 		escreva("[1] Concerto Profissional         [2] Modo Gambiarra         [3] Recusar cliente\n")
 	}
@@ -1049,7 +1072,7 @@ programa
     
     		escolha(escolhas){
     			caso 1:
-    			dinheiro = dinheiro + 600
+    			dinheiro = dinheiro + 600 * bonus
     			se(u.sorteia(1, 3) == 3){
     				erros_evento++
     			}
@@ -1242,7 +1265,7 @@ programa
 	funcao evento_especial_neymar(){
 
 		escreva("                          --- Evento Aleatório ---\n\n")
-		escreva("O Neymar aparece no sua oficina e te desafia para um X1 de futebol.\n\n")
+		escreva("O Neymar aparece no sua oficina e te desafia para um X1 de penaltis.\n\n")
 
 		escreva("//////////////******************************************//////////////\n")
 		escreva("//////////********************,,***((/(**,****************////////////\n")
@@ -1285,17 +1308,21 @@ programa
 		escreva("//////////*******.. ..       , .*##%%#######%##%#%#%#%&&&%&&(((((#####\n\n")
 
 
-		escreva("[1] Aceitar o desafio (-1h, existe probabilidade de ganhar) \n")
+		escreva("[1] Aceitar o desafio (-1h, é possivel ganhar) \n")
 		escreva("[2] Recusar (Nada acontece)\n")
 		leia(escolhas)
 		limpa()
     
     		escolha(escolhas){
     			caso 1:
-    			se(u.sorteia(1, 100) == 100){
-    				escreva("Neymar: parabens ", nome_mecanico, " voce me venceu nessa partida vou te dar 1000R$ e vou deixar voce concertar o meu batmovel que está com um problema\n\n")
+    			se(penalti()){
+    				limpa()
     				dinheiro = dinheiro +1000
+    				escreva("Dinheiro: R$", dinheiro, "           Dia: ", dia,"           Horario: ", horario, "h\n\n")
+    				escreva("Neymar: parabens ", nome_mecanico, " voce me venceu nessa partida vou te dar 1000R$ e vou deixar voce concertar o meu batmovel que está com um problema\n\n")
     			} senao {
+    				limpa()
+    				escreva("Dinheiro: R$", dinheiro, "           Dia: ", dia,"           Horario: ", horario, "h\n\n")
     				escreva("Neymar: Foi um jogo muito bom ", nome_mecanico, " por compensação e vou deixar voce concertar o meu batmovel que está com um problema\n\n")
     			}
     			batmovel()
@@ -1342,7 +1369,7 @@ programa
     
     		escolha(escolhas){
     			caso 1:
-    			dinheiro = dinheiro + 500
+    			dinheiro = dinheiro + 500 * bonus
     			horario = horario + 4
     			pare
     			caso 2:
@@ -1397,69 +1424,105 @@ programa
 		}
 		
 	}
-		funcao penalti(){
+	funcao logico penalti(){
 		cadeia penaltis
 		cadeia lado
 		inteiro ponto = 0
-			escreva ("Voce foi ate a Vila Belmiro(estadio do santos) para o desafio de penaltis contra o neymay\n")
-			escreva("Como jogar: Voce tem que escolher um lado para bater o penalti, se acertar, +1 ponto e se errar nao ganha nada. Voce bate o penalti 5 vezes e vai para o gol tentar defender o penalti do neymar e nao deixar ele fazer ponto.\n")
-			escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
-			lado = "esquerdo"
-			leia(penaltis)
+		inteiro pontos_neymar = u.sorteia(3, 5)
+            escreva ("Voce foi ate a Vila Belmiro(estadio do santos) para o desafio de penaltis contra o Neymar\n")
+            escreva("Como jogar: Voce tem que escolher um lado para bater o penalti, se acertar, +1 ponto e se errar nao ganha nada. Voce bate o penalti 5 vezes.\n")
+            escreva("O Neymar bateu primeiro e fez ", pontos_neymar, " gols, caso voce empate ou faça mais pontos voce ganha.\n") 
+            escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+            lado = "esquerdo"
+            leia(penaltis)
 
-			se(lado == penaltis){
-				escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto")
-			} senao {
-				escreva("Voce chutou para o lado direito, mas para o seu azar o goleiro defendeu. Voce tem 0 pontos")
-			}
+            se(lado == penaltis){
+                escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto\n")
+                ponto++
+            } senao {
+                escreva("Voce chutou para o lado direito, mas para o seu azar o goleiro defendeu. Voce tem 0 pontos.\n")
+            }
 
-			escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
-			lado = "esquerdo"
-			leia(penaltis)
+            escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+            lado = "esquerdo"
+            leia(penaltis)
 
-			se(lado == penaltis){
-				escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto")
-			} senao {
-				escreva("Voce chutou para o lado direito, mas para o seu azar o goleiro defendeu. Voce tem ", ponto, " ")
-			}
-			escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
-			lado = "direito"
-			leia(penaltis)
+            se(lado == penaltis){
+                escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto\n")
+                ponto++
+            } senao {
+                escreva("Voce chutou para o lado direito, mas para o seu azar o goleiro defendeu. Voce tem ", ponto, " ponto.\n")
+            }
+            escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+            lado = "direito"
+            leia(penaltis)
 
-			se(lado == penaltis){
-				escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto")
-			} senao {
-				escreva("Voce chutou para o lado esquerdo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ")
-			}
-		}
+            se(lado == penaltis){
+                escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto.\n")
+                ponto++
+            } senao {
+                escreva("Voce chutou para o lado esquerdo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ponto.\n")
+            }
+            escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
+            lado = "direito"
+            leia(penaltis)
+
+            se(lado == penaltis){
+                escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto.\n")
+                ponto++
+            } senao {
+                escreva("Voce chutou para o lado esquerdo, mas para o seu azar o goleiro defendeu. Voce tem", ponto, " ponto.\n")
+            }
+            escreva("Qual lado voce vai bater? Digite esquerdo, direito ou meio\n")
+            lado = "direito"
+            leia(penaltis)
+
+            se(lado == penaltis){
+                escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto\n")
+                ponto++
+            } senao {
+                escreva("Voce chutou para o lado certo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ponto.\n")
+            }
+            escreva("aperte [enter] para proseguir ")
+					leia(continuar)
+					enquanto(continuar != ""){
+						escreva("\ntecla presionada errada aperte [enter] ")
+						leia(continuar) 
+					}
+            se(ponto >= pontos_neymar){
+            	retorne verdadeiro 
+            } senao {
+            	retorne falso
+            }
+        }
 	funcao dia_1(){
 		escreva(" ______________________________________________________ \n")
 		escreva("|                 (                                    | \n")
 		escreva("|                  )\\ )                )               | \n")
 		escreva("|                 (()/(  (      )   ( /(               |\n")
-		escreva("|                 /(_)) )\\  ( /(   )\\())              |\n")
+		escreva("|                 /(_)) )\\  ( /(   )\\())               |\n")
 		escreva("|                 (_))_ ((_) )(_)) ((_)\\               | \n")
 		escreva("|                  |   \\ (_)((_)_   / (_)              |\n")
 		escreva("|                  | |) || |/ _` |  | |                |\n")
 		escreva("|                  |___/ |_|\\__,_|  |_|                |\n")
 		escreva("|                                                      |\n")
 		escreva("|     Voce começa sua jornada na mecanica animado      |\n")
-		escreva("|______________________________________________________|\n")
+		escreva("|______________________________________________________|\n\n")
 
 	}
 	funcao dia_2(){
 		escreva(" ______________________________________________________ \n")
 		escreva("|                 (                                    | \n")
-		escreva("|                  )\\ )                )              | \n")
+		escreva("|                  )\\ )                )               | \n")
 		escreva("|                 (()/(  (      )   ( /(               |\n")
-		escreva("|                  /(_)) )\\  ( /(   )(_))             |\n")
+		escreva("|                  /(_)) )\\  ( /(   )(_))              |\n")
 		escreva("|                 (_))_ ((_) )(_)) ((_)                | \n")
-		escreva("|                  |   \\ (_)((_)_  |_  )              |\n")
+		escreva("|                  |   \\ (_)((_)_  |_  )               |\n")
 		escreva("|                  | |) || |/ _` |  / /                |\n")
-		escreva("|                  |___/ |_|\\__,_| /___|              |\n")
+		escreva("|                  |___/ |_|\\__,_| /___|               |\n")
 		escreva("|                                                      |\n")
 		escreva("|    Voce continua animado e ve que consegue lucrar    |\n")
-		escreva("|______________________________________________________|\n")
+		escreva("|______________________________________________________|\n\n")
 	}
 	funcao dia_3(){
 		escreva(" ______________________________________________________ \n")
@@ -1470,11 +1533,11 @@ programa
 		escreva("|                 (_))_ ((_) )(_))  ((_)\\              | \n")
 		escreva("|                  |   \\ (_)((_)_  |__ (_)             |\n")
 		escreva("|                  | |) || |/ _` |  |_ \\               |\n")
-		escreva("|                  |___/ |_|\\__,_| |___/              |\n")
+		escreva("|                  |___/ |_|\\__,_| |___/               |\n")
 		escreva("|                                                      |\n")
 		escreva("|       Voce percebe que esta começando a errar,       |\n")
 		escreva("|     mas sabe que o negocio continua dando certo      |\n")
-		escreva("|______________________________________________________|\n")
+		escreva("|______________________________________________________|\n\n")
 	}
 	funcao dia_4(){
 		escreva(" ______________________________________________________ \n")
@@ -1487,9 +1550,21 @@ programa
 		escreva("|                  | |) || |/ _` | |_  _|              |\n")
 		escreva("|                  |___/ |_|\\__,_|   |_|               |\n")
 		escreva("|                                                      |\n")
-		escreva("|       Voce percebe que esta começando a errar,       |\n")
-		escreva("|     mas sabe que o negocio continua dando certo      |\n")
-		escreva("|______________________________________________________|\n")
+		escreva("|        Voce sente que algo grande esta vindo         |\n")
+		escreva("|______________________________________________________|\n\n")
 	}
-
+	funcao dia_5(){
+		escreva(" ______________________________________________________ \n")
+		escreva("|                 (                                    | \n")
+		escreva("|                  )\\ )             (  (               | \n")
+		escreva("|                 (()/(  (      )   )\\))(              |\n")
+		escreva("|                  /(_)) )\\  ( /(  ((_)()\\             |\n")
+		escreva("|                 (_))_ ((_) )(_))  (()((_)            | \n")
+		escreva("|                  |   \\ (_)((_)_    | __|             |\n")
+		escreva("|                  | |) || |/ _` |   |__ \\             |\n")
+		escreva("|                  |___/ |_|\\__,_|   |___/             |\n")
+		escreva("|                                                      |\n")
+		escreva("|   ... Voce sente um mal presentimento quando acorda  |\n")
+		escreva("|______________________________________________________|\n\n")
+	}
 }
