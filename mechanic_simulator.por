@@ -1433,7 +1433,7 @@ programa
 		cadeia lado
 		inteiro ponto = 0
 		inteiro pontos_neymar = u.sorteia(3, 5)
-            escreva ("Voce foi ate a Vila Belmiro(estadio do santos) para o desafio de penaltis contra o Neymar\n")
+            escreva ("Voce foi ate a Vila Belmiro(estadio do Santos) para o desafio de penaltis contra o Neymar\n")
             escreva("Como jogar: Voce tem que escolher um lado para bater o penalti, se acertar, +1 ponto e se errar nao ganha nada. Voce bate o penalti 5 vezes.\n")
             escreva("O Neymar bateu primeiro e fez ", pontos_neymar, " gols, caso voce empate ou faça mais pontos voce ganha.\n") 
             escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
