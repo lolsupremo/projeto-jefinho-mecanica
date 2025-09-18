@@ -79,7 +79,7 @@ programa
 						escreva("Você teve um dia perfeito sem fazer cagadas em carros de clientes.\n")
 					}
 					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n\n")
-					dinheiro = dinheiro - 300*dia
+					dinheiro = dinheiro - 200*dia
 					se(dia == 2){
 						dia_2()
 					} senao se(dia == 3){
@@ -112,11 +112,11 @@ programa
 			limpa()
 			dia_5()
 			escreva("aperte [enter] para proseguir ")
-					leia(continuar)
-					enquanto(continuar != ""){
-						escreva("\ntecla presionada errada aperte [enter] ")
-						leia(continuar) 
-					}
+			leia(continuar)
+			enquanto(continuar != ""){
+				escreva("\ntecla presionada errada aperte [enter] ")
+				leia(continuar) 
+			}
 			batalha_boss()	
 		}
 	}
@@ -436,13 +436,17 @@ programa
 		escreva("20) Grite “FORÇA, MOTOR!” antes de ligar o carro.\n\n")
 
 		enquanto(repitir){
-			escreva("informe o ", ordem+1, "º passo\n")
-			leia(passos[ordem])
-			escreva("Quer infomar mais um passo?\n\n [s] Sim           [n] Nao \n")
-			leia(continuar)
-			ordem++
-			se(continuar == "n"){
+			se(ordem == 20){
 				repitir = falso
+			} senao {
+				escreva("informe o ", ordem+1, "º passo\n")
+				leia(passos[ordem])
+				escreva("Quer infomar mais um passo?\n\n [s] Sim           [n] Nao \n")
+				leia(continuar)
+				ordem++
+				se(continuar == "n"){
+					repitir = falso
+				}	
 			}
 		}
 		para(inteiro i=0; i < 20; i++){
