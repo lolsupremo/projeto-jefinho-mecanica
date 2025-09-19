@@ -1465,7 +1465,7 @@ programa
                 escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto.\n")
                 ponto++
             } senao {
-                escreva("Voce chutou para o lado esquerdo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ponto.\n")
+                escreva("Voce chutou para o lado esquerdo, mas pegou errado na bola e jogou ela para longe. voce tem ", ponto, " ponto.\n")
             }
             escreva("Qual lado voce vai bater? Digite esquerdo ou direito\n")
             lado = "direito"
@@ -1475,7 +1475,7 @@ programa
                 escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto.\n")
                 ponto++
             } senao {
-                escreva("Voce chutou para o lado esquerdo, mas para o seu azar o goleiro defendeu. Voce tem", ponto, " ponto.\n")
+                escreva("Voce chutou para o lado esquerdo, mas para o seu azar o goleiro defendeu. Voce tem ", ponto, " ponto.\n")
             }
             escreva("Qual lado voce vai bater? Digite esquerdo, direito ou meio\n")
             lado = "direito"
@@ -1485,7 +1485,7 @@ programa
                 escreva("Voce acertou o lado. Voce tem ", ponto+1, " ponto\n")
                 ponto++
             } senao {
-                escreva("Voce chutou para o lado certo, mas pegou errado na bola e jogou ela para longe. voce tem", ponto, " ponto.\n")
+                escreva("Voce chutou para o lado certo, mas pegou errado na bola e jogou ela para longe. voce tem ", ponto, " ponto.\n")
             }
             escreva("aperte [enter] para proseguir ")
 					leia(continuar)
