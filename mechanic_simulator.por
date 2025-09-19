@@ -78,8 +78,8 @@ programa
 					}senao{
 						escreva("Você teve um dia perfeito sem fazer cagadas em carros de clientes.\n")
 					}
-					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 200*dia, "\n\n")
-					dinheiro = dinheiro - 200*dia
+					escreva("Você teve uma dispesa por causas diversas(Exemplo: aluguel, luz, manutenção das ferramentas) de R$ ", 300*dia, "\n\n")
+					dinheiro = dinheiro - 300*dia
 					se(dia == 2){
 						dia_2()
 					} senao se(dia == 3){
