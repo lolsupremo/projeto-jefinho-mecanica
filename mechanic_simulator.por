@@ -104,12 +104,16 @@ programa
 				dia++
 				se(dinheiro <= 0){
 					falencia()
-				}
-				limpa()
+					dia = 6
+				} senao {
+					limpa()
 				escreva("Dinheiro: R$", dinheiro, "\n\n")
 				loja()
+				}
+				
 			}
-			limpa()
+			se(dia == 5){
+				limpa()
 			dia_5()
 			escreva("aperte [enter] para proseguir ")
 			leia(continuar)
@@ -117,7 +121,8 @@ programa
 				escreva("\ntecla presionada errada aperte [enter] ")
 				leia(continuar) 
 			}
-			batalha_boss()	
+			batalha_boss()
+			}	
 		}
 	}
 	funcao introducao(){
